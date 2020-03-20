@@ -15,7 +15,7 @@
     </el-row> -->
     <div class='main-part'>
       <div class='menu' >
-        <Menu v-bind:language='language'/>
+        <Menu :language='language' />
       </div>
       <div class='content'>
         <router-view />

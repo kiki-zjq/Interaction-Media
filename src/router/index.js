@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Homepage from '@/components/homepage/index.vue'
-import Resume from '@/components/resume/index.vue'
+import PreTest from '@/components/PreTest/index.vue'
 import Experience from '@/components/experience/index.vue'
 import Others from '@/components/others/index.vue'
 import Projects from '@/components/projects/index.vue'
@@ -17,9 +17,9 @@ export default new Router({
       component: Homepage
     },
     {
-      path:'/resume',
-      name:'Resume',
-      component:Resume
+      path:'/pre-test',
+      name:'PreTest',
+      component:PreTest
     },
     {
       path:'/experience',

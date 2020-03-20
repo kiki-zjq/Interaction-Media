@@ -1,5 +1,12 @@
 <template>
+
+<div class='Menu-block'>
+        <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+          <el-radio-button :label="false">展开</el-radio-button>
+          <el-radio-button :label="true">收起</el-radio-button>
+        </el-radio-group> -->
          <el-menu
+      :collapse="isCollapse"
       :default-active="active"
       class="el-menu-vertical-demo main-menu"
       @open="handleOpen"
@@ -36,7 +43,9 @@
       <el-submenu index='1'>
         <template slot='title'>
           <i class="el-icon-menu"></i>
-          <span slot="title">{{language=='Chinese'?'首页':'HOMEPAGE'}}</span>
+            <span slot="title">{{language=='Chinese'?'首页':'HOMEPAGE'}}
+            <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i>
+          </span>
         </template>
         <el-menu-item-group>
 
@@ -55,23 +64,35 @@
       </el-submenu>
 
       <el-menu-item index="2" @click='handleClick(2)'>
-        <i class="el-icon-edit"></i>
-        <span slot="title">{{language=='Chinese'?'简历':'RESUME'}}</span>
+        <template slot='title'>
+          <i class="el-icon-edit"></i>
+          <span slot="title">{{language=='Chinese'?'课前测试':'Pre-Course Test'}}</span>
+          <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i>
+        </template>
       </el-menu-item>
 
       <el-menu-item index="3" @click='handleClick(3)'>
-        <i class="el-icon-document"></i>
-        <span slot="title">{{language=='Chinese'?'经历':'EXPERIENCE'}}</span>
+        <template slot='title'>
+          <i class="el-icon-document"></i>
+          <span slot="title">{{language=='Chinese'?'经历':'EXPERIENCE'}}</span>
+          <i style='margin-left:20px' v-if="know[0]" class="el-icon-success"></i>
+        </template>
       </el-menu-item>
 
       <el-menu-item index="5" @click='handleClick(5)'>
-        <i class="el-icon-suitcase"></i>
-        <span slot="title">{{language=='Chinese'?'项目':'PROJECT'}}</span>
+        <template slot='title'>
+          <i class="el-icon-suitcase"></i>
+          <span slot="title">{{language=='Chinese'?'项目':'PROJECT'}}</span>
+          <i style='margin-left:20px' v-if="know[1]" class="el-icon-success"></i>
+        </template>
       </el-menu-item>
 
       <el-menu-item index="6" @click='handleClick(6)'>
-        <i class="el-icon-reading"></i>
-        <span slot="title">{{language=='Chinese'?'证书':'CERTIFICATION'}}</span>
+        <template slot='title'>
+          <i class="el-icon-reading"></i>
+          <span slot="title">{{language=='Chinese'?'证书':'CERTIFICATION'}}</span>
+          <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
+        </template>
       </el-menu-item>
 
       <!-- <el-menu-item index="4" @click='handleClick(4)'>
@@ -80,6 +101,9 @@
       </el-menu-item> -->
 
     </el-menu>
+
+
+</div>
 </template>
 
 <script>
@@ -89,18 +113,20 @@ export default {
         language:{
             type:String,
             default:'Chinese',
-        }
+        },
+
     },
   data(){
     return{
-      active
+      active,
+      isCollapse:false,
     }
   },
   mounted(){
     switch(this.$route.path){
       case '/':
         this.active='1';break;
-      case '/resume':
+      case '/pre-test':
         this.active='2';break;
       case '/experience':
         this.active='3';break;
@@ -117,7 +143,7 @@ export default {
   watch:{
     $route(to,from){
       switch(to.path){
-      case '/resume':
+      case '/pre-test':
         this.active='2';return;
       case '/experience':
         this.active='3';return;
@@ -146,17 +172,8 @@ export default {
         //console.log(key, keyPath);
       },
       handleClick(index){
-          // if(index==2){
-          //   this.$router.push('/resume#anchor');
-          // }else if(index==3){
-          //   this.$router.push('/experience#anchor');
-          // }else if(index==4){
-          //   this.$router.push('/others#anchor');
-          // }else if(index==1){
-          //   this.$router.push('/#anchor');
-          // }
           switch(index){
-            case 2:this.$router.push('/resume#anchor');break;
+            case 2:this.$router.push('/pre-test#anchor');break;
             case 3:this.$router.push('/experience#anchor');break;
             case 4:this.$router.push('/others#anchor');break;
             case 5:this.$router.push('/projects#anchor');break;
@@ -166,6 +183,11 @@ export default {
             case 1.3:this.$router.push('/#contact');break;
           }
       },
+    },
+    computed:{
+      know:function(){
+        return this.$store.state.know
+      }
     }
   };
 </script>
