@@ -16,10 +16,14 @@
             
             </div>
 
-            <div class='button'>
-                 <el-button type="primary" @click='handleClick' round>{{buttonLabel}}</el-button>
-                 
-            </div>
+            <el-row class='button'>
+                <el-col :span='6'>
+                 <el-button style="display:inline-block" type="primary" @click='handleClick' round>{{buttonLabel}}</el-button>
+                </el-col>
+                <el-col :span='6' :offset='2'>
+                 <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage" :color="customColors"></el-progress>
+                </el-col>
+            </el-row>
         </el-card>
 </template>
 
@@ -41,6 +45,10 @@ export default {
         description:{
             type:String,
             default:'',
+        },
+        percentage:{
+            type:Number,
+            default:10
         }
     },
     data() {
@@ -48,29 +56,51 @@ export default {
         know:false,
         radio:-1,
         buttonLabel:'确认',
+        customColors: [
+          {color: '#f56c6c', percentage: 20},
+          {color: '#e6a23c', percentage: 40},
+          {color: '#5cb87a', percentage: 60},
+          {color: '#1989fa', percentage: 80},
+          {color: '#6f7ad3', percentage: 100}
+        ]
       };
     },
     methods:{
         handleClick(){
-            if(this.buttonLabel=='确认'){  
-                if(this.radio == this.correct){
-                    this.know = true;
-                    $(".description").css("background-color","#67C23A");
-                }  
-                if(this.radio != this.correct){
-                    this.know = false;
-                    $(".description").css("background-color","#F56C6C");
-                }  
-                this.buttonLabel = '下一题';
-                $(".description").slideToggle("slow");
-            }else{
-                $(".description").slideToggle("slow",()=>{
-                    this.radio = -1;
-                    this.$emit('next',this.know);
-                    this.buttonLabel = '确认'
-                    this.know = false;
-                });
-           }
+            //--------------------------------------------------
+                  if(this.buttonLabel=='确认'){ 
+                    if(this.radio == this.correct){
+                        this.know = true;
+                        $(".description").css("background-color","#67C23A");
+                    }  
+                    if(this.radio != this.correct){
+                        this.know = false;
+                        $(".description").css("background-color","#F56C6C");
+                    } 
+                    if(this.percentage!=30) {this.buttonLabel = '下一题';}
+                    if(this.percentage==30) {this.buttonLabel = '查看报告';}
+                    $(".description").slideToggle("slow");
+                    return;
+                }
+                if(this.buttonLabel=='下一题'){
+                    $(".description").slideToggle("slow",()=>{
+                        this.radio = -1;
+                        this.$emit('next',this.know);
+                        this.buttonLabel = '确认'
+                        this.know = false;
+                    });
+                    return;
+                }
+                if(this.buttonLabel=='查看报告'){
+                    $(".description").slideToggle("slow",()=>{
+                        this.radio = -1;
+                        this.$emit('result',this.know);
+                        this.buttonLabel = '确认'
+                        this.know = false;
+                    });
+                    return;
+                }
+            // ----------------------------------------------------------
         }
     }
 }
@@ -80,6 +110,7 @@ export default {
 .box-card{
     position: relative;
     padding:20px;
+    padding-bottom: 10px;
 }
 .box-card .question{
     font-weight:bold;
@@ -98,9 +129,13 @@ export default {
     margin-bottom: 40px;
     display: none;
 }
-.button{
+/* .button{
     position:absolute;
     bottom:20px;
     margin-top:20px;
+} */
+.button{
+    margin-top:60px;
+    margin-bottom: 10px;
 }
 </style>

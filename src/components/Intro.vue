@@ -42,7 +42,7 @@ export default {
     methods:{
         handleClick(index){
             switch(index){
-                case 1:this.$router.push('/#skill');break;
+                case 1:this.$router.push('/pre-test#anchor');break;
                 case 2:this.$router.push('/#anchor');break;
                 case 3:this.$router.push('/resume#anchor');break;
             }

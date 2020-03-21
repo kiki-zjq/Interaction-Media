@@ -14,11 +14,13 @@
             /> -->
             <Card
                 class='card'
+                :percentage='percentage'
                 :question='questions[this.index]'
                 :answers='answers[this.index]' 
                 :correct='corrects[this.index]' 
                 :description='descriptions[this.index]'
                 @next='handleNext'
+                @result='handleResult'
             />
         <!---------------------------------------------------------------->
         <!-- <transition name='el-zoom-in-center'>
@@ -44,6 +46,7 @@ export default {
     },
     data() {
       return {
+        percentage:10,
         know:[],
         index:0,
         corrects:[
@@ -85,18 +88,21 @@ export default {
         handleNext(prop){
             //this['show'+this.index]=false;
             this.know[this.index] = prop;
-            if(this.index!=2){
+            
                 this.index += 1;
-            }
-            if(this.index == 2){
-                console.log(this.know);
-                this.$store.commit('changeKnow',this.know)
-            }
+                this.percentage+=10;
+            
+            
             //this['show'+this.index]=true;
             // $('.card').slideUp("1500",()=>{
             //     this.index += 1;
             //     $('.card').slideDown("1500")
             // });
+        },
+        handleResult(prop){
+            this.know[this.index] = prop;
+            console.log(this.know);
+            this.$store.commit('changeKnow',this.know)
         }
     },
     mounted(){
