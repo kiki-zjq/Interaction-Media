@@ -22,7 +22,7 @@
       </div>
     </div>
 
-     <!-- <Footer class='footer'/> -->
+     <Footer class='footer'/>
   </div>
 </template>
 
@@ -67,13 +67,17 @@ $(window).scroll( function() {
 </script>
 
 <style>
+body{
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  text-align: center
+  text-align: center;
 }
 /* .main-part{
   position:relative;
@@ -90,6 +94,7 @@ Menu{
   min-width: 1200px;
   border-radius: 50px;
   background-color: white;
+  border-radius:0 0 20px 20px;
 }
 
 .menu{

@@ -2,7 +2,7 @@
     <div class="intro-page">
         <div class="title">
             <h1 class="user-name">Java GO!</h1>
-            <h2>Java Study Website</h2>
+            <h2 style="margin:40px">Java Study Website</h2>
             <el-button class='top-button' type="danger" @click='handleClick(1)' round>
                 {{language=='Chinese'?'课前测试':'Pre-Course Test'}}
             </el-button>
@@ -61,7 +61,7 @@ export default {
     margin-top:-60px;
     width:100%;
     height:85vh; 
-    border:black 2px solid;
+    /* border:black 2px solid; */
     border-radius:0 0 20px 20px;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 1px, transparent 1px), 
                 linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px) 

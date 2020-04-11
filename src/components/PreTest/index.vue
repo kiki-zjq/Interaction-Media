@@ -13,6 +13,7 @@
                 @next='handleNext'
             /> -->
             <Card
+                v-if = this.isTest
                 class='card'
                 :percentage='percentage'
                 :question='questions[this.index]'
@@ -21,6 +22,11 @@
                 :description='descriptions[this.index]'
                 @next='handleNext'
                 @result='handleResult'
+            />
+
+            <resultCard
+                v-if = !this.isTest
+                @check = "drawer=true"
             />
         <!---------------------------------------------------------------->
         <!-- <transition name='el-zoom-in-center'>
@@ -32,20 +38,43 @@
                 @next='handleNext'
             />
         </transition> -->
-        
+        <el-drawer
+            title="我是标题"
+            :visible.sync="drawer"
+            :with-header="false"
+            size = "40%">
+            <span>我来啦!</span>
+
+            <div style='margin:40px'>
+                <checkCard
+                    v-for = "(q,index) in questions"
+                    :key = "index"
+                    :question='questions[index]'
+                    :answers='answers[index]' 
+                    :correct='corrects[index]' 
+                />
+                
+            </div>
+        </el-drawer>
 
 </div>
 </template>
 
 <script>
 import Card from './components/Card';
+import resultCard from './components/resultCard';
+import checkCard from './components/checkCard';
 
 export default {
     components:{
         Card,
+        resultCard,
+        checkCard
     },
     data() {
       return {
+        drawer:false,
+        isTest:true,
         percentage:10,
         know:[],
         index:0,
@@ -102,6 +131,7 @@ export default {
         handleResult(prop){
             this.know[this.index] = prop;
             console.log(this.know);
+            this.isTest = false;
             this.$store.commit('changeKnow',this.know)
         }
     },
@@ -116,7 +146,7 @@ export default {
   };
 </script>
 
-<style scoped>
+<style>
 .block{
     text-align: left;
     margin-bottom: 200px;
@@ -142,5 +172,15 @@ export default {
     font-size:14px;
     line-height:24px;
     margin-bottom:-20px;
+}
+
+.el-drawer__body {
+    overflow: auto;
+    /* overflow-x: auto; */
+}
+
+/*2.隐藏滚动条，太丑了*/
+.el-drawer__container ::-webkit-scrollbar{
+    display: none;
 }
 </style>

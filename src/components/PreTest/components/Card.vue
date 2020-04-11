@@ -67,8 +67,21 @@ export default {
     },
     methods:{
         handleClick(){
+
+            if(this.radio == -1){
+                        this.$message({
+                        message: '请进行选择',
+                        type: 'warning'
+                        });
+                        //  this.$notify({
+                        //     title: 'warning',
+                        //     message: '请进行选择',
+                        //     type: 'warning'
+                        //     });
+                    }
             //--------------------------------------------------
-                  if(this.buttonLabel=='确认'){ 
+                  if(this.buttonLabel=='确认' && this.radio != -1){ 
+
                     if(this.radio == this.correct){
                         this.know = true;
                         $(".description").css("background-color","#67C23A");

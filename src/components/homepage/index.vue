@@ -1,7 +1,7 @@
 <template>
     <div class="homepage-block">
         <h2>{{language=='Chinese'?'首页':'HOMEPAGE'}}</h2>
-        <div class="divider"></div>
+        <!-- <div class="divider"></div> -->
         
         <div class="sub-title">
             {{language=='Chinese'?'关于作者':'About'}}
