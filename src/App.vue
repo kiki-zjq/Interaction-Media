@@ -20,9 +20,12 @@
       <div class='content'>
         <router-view />
       </div>
+
+      
     </div>
 
-     <Footer class='footer'/>
+    <Footer class='footer'/>
+     
   </div>
 </template>
 
@@ -95,6 +98,7 @@ Menu{
   border-radius: 50px;
   background-color: white;
   border-radius:0 0 20px 20px;
+  /* overflow:hidden; */
 }
 
 .menu{
@@ -124,6 +128,7 @@ Menu{
 
 .footer{
   position: relative;
+  
   
 }
 </style>

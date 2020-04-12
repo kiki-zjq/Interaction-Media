@@ -43,7 +43,7 @@
             :visible.sync="drawer"
             :with-header="false"
             size = "40%">
-            <span>我来啦!</span>
+            
 
             <div style='margin:40px'>
                 <checkCard
@@ -52,6 +52,7 @@
                     :question='questions[index]'
                     :answers='answers[index]' 
                     :correct='corrects[index]' 
+                    :myAnswers ='myAnswers[index]'
                 />
                 
             </div>
@@ -110,14 +111,15 @@ export default {
             '解析1：这一题选2，笨比',
             '解析2：这一题选3，笨比',
             '解析3：这一题选4，笨比',
-        ]
+        ],
+        myAnswers:[],//myAnswer存储我的每一道题答案
       };
     },
     methods:{
-        handleNext(prop){
+        handleNext(prop,myAnswer){
             //this['show'+this.index]=false;
             this.know[this.index] = prop;
-            
+            this.myAnswers[this.index] = myAnswer;
                 this.index += 1;
                 this.percentage+=10;
             
@@ -128,9 +130,11 @@ export default {
             //     $('.card').slideDown("1500")
             // });
         },
-        handleResult(prop){
+        handleResult(prop,myAnswer){
             this.know[this.index] = prop;
+            this.myAnswers[this.index] = myAnswer;
             console.log(this.know);
+            console.log(this.myAnswers);
             this.isTest = false;
             this.$store.commit('changeKnow',this.know)
         }

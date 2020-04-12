@@ -3,9 +3,15 @@
         <div class="question">
                 {{question}}
             </div>
-            <div class='choices'>
-                <ul>
-                    <li v-for="(a,index) in answers" :key="index" :label="index">{{a}}</li>
+            <div class='check_list'>
+                <ul style="list-style-type:none;" >
+                    <li v-for="(a,index) in answers" 
+                        :key="index" 
+                        :label="index" 
+                        :class="{ correctAnswer: correct==index, myWrong: index == myAnswers }"
+                        
+                        >
+                        {{a}}</li>
                 </ul>
                 
             </div>
@@ -29,6 +35,10 @@ export default {
             type:Number,
             default:-1,
         },
+        myAnswers:{
+            type:Number,
+            default:-1,
+        }
     }
 
 }
@@ -39,5 +49,20 @@ export default {
     .box-card{
         margin-bottom: 20px
     }
+    .check_list ul{
+        padding-inline-start: 1em;        
+    }
+    .check_list li{
+        margin-bottom: 5px;
+    }
+    .myWrong{
+        color:red;
+        font-weight: bold;
+    }
+    .correctAnswer{
+        color:green;
+        font-weight: bold;
+    }
+    
 
 </style>

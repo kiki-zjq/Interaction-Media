@@ -97,8 +97,8 @@ export default {
                 }
                 if(this.buttonLabel=='下一题'){
                     $(".description").slideToggle("slow",()=>{
+                        this.$emit('next',this.know,this.radio);
                         this.radio = -1;
-                        this.$emit('next',this.know);
                         this.buttonLabel = '确认'
                         this.know = false;
                     });
@@ -106,8 +106,8 @@ export default {
                 }
                 if(this.buttonLabel=='查看报告'){
                     $(".description").slideToggle("slow",()=>{
+                        this.$emit('result',this.know,this.radio);
                         this.radio = -1;
-                        this.$emit('result',this.know);
                         this.buttonLabel = '确认'
                         this.know = false;
                     });
