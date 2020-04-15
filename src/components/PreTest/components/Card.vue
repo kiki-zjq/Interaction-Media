@@ -4,7 +4,7 @@
                 {{question}}
             </div>
             <div class='choices'>
-                <el-radio-group  v-model="radio">
+                <el-radio-group  v-model="radio" :disabled="hasChoose"> 
                     <el-radio class='choices-item' style='display:block' v-for="(a,index) in answers" :key="index" :label="index" >
                         {{a}}
                     </el-radio>
@@ -12,8 +12,10 @@
             </div>
 
             <div class='description'>
-                {{description}}
-            
+                <div v-for="(d,index) in description" :key="index" :class="{isTitle:index==0}">
+                    {{d}}
+
+                </div>
             </div>
 
             <el-row class='button'>
@@ -43,8 +45,8 @@ export default {
             default:-1,
         },
         description:{
-            type:String,
-            default:'',
+            type:Array,
+            default:[],
         },
         percentage:{
             type:Number,
@@ -53,6 +55,7 @@ export default {
     },
     data() {
       return {
+        hasChoose:false,
         know:false,
         radio:-1,
         buttonLabel:'确认',
@@ -84,30 +87,34 @@ export default {
 
                     if(this.radio == this.correct){
                         this.know = true;
-                        $(".description").css("background-color","#67C23A");
+                        $(".description").css("background-image","linear-gradient(#DCE35B,#45B649)");
                     }  
                     if(this.radio != this.correct){
                         this.know = false;
-                        $(".description").css("background-color","#F56C6C");
+                        $(".description").css("background-image","linear-gradient(#f7b733,#fc4a1a)");
                     } 
-                    if(this.percentage!=30) {this.buttonLabel = '下一题';}
-                    if(this.percentage==30) {this.buttonLabel = '查看报告';}
+                    if(this.percentage!=100) {this.buttonLabel = '下一题';}
+                    if(this.percentage==100) {this.buttonLabel = '查看报告';}
                     $(".description").slideToggle("slow");
+                    this.hasChoose = true;
                     return;
                 }
                 if(this.buttonLabel=='下一题'){
                     $(".description").slideToggle("slow",()=>{
                         this.$emit('next',this.know,this.radio);
                         this.radio = -1;
+                        this.hasChoose = false;
                         this.buttonLabel = '确认'
                         this.know = false;
                     });
+                    
                     return;
                 }
                 if(this.buttonLabel=='查看报告'){
                     $(".description").slideToggle("slow",()=>{
                         this.$emit('result',this.know,this.radio);
                         this.radio = -1;
+                        this.hasChoose = false;
                         this.buttonLabel = '确认'
                         this.know = false;
                     });
@@ -141,7 +148,12 @@ export default {
     margin-top:20px;
     margin-bottom: 40px;
     display: none;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
 }
+.description .isTitle{
+     font-weight: bold;
+     margin-bottom:1em;   
+    }
 /* .button{
     position:absolute;
     bottom:20px;
