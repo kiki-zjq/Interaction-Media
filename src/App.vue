@@ -17,15 +17,15 @@
       <div class='menu' >
         <Menu :language='language' />
       </div>
-      <div class='content'>
+      <div class='content' id='content'>
         <router-view />
       </div>
-      <div style="border:black solid 10px;width:100%;height:2500px"></div>
+      <!-- <div class='PropUp' style="border:black solid 10px;width:100%;height:2500px"></div> -->
       
     </div>
 
-    <Footer class='footer'/>
-     
+    <!-- <Footer class='footer'/>
+      -->
   </div>
 </template>
 
@@ -50,6 +50,14 @@ export default {
       } 
     }
   },
+  // watch:{
+  //   $router(to,from){
+  //     let contentHeight = document.getElementById('content').clientHeight
+  //     contentHeight = contentHeight <= 1500? contentHeight : contentHeight+300
+  //     console.log(contentHeight)
+  //     $(".PropUp").css("height",contentHeight);
+  //   }
+  // },
   components:{
     IntroPage,
     GetStart,
@@ -57,6 +65,13 @@ export default {
     Footer
   },
 };
+
+// $(document).ready(function(){
+//   let contentHeight = document.getElementById('content').clientHeight
+//   contentHeight = contentHeight <= 1500? contentHeight : contentHeight+300
+//   console.log(contentHeight)
+//   $(".PropUp").css("height",contentHeight);
+// })
 $(window).scroll( function() {
         let h = window.screen.availHeight;
         if(document.documentElement.scrollTop>=h){
@@ -66,6 +81,10 @@ $(window).scroll( function() {
         else{
              $(".menu").removeClass("fix");
         }
+
+        
+
+
     } );//这一段以后优化一下，加一个回调函数让他不要一直在那里判断
 </script>
 
@@ -93,7 +112,7 @@ Menu{
   width:100%;
   /* border:black solid 1px; */
   position: relative;
-  min-height: 2000px;
+  min-height: 800px;
   min-width: 1200px;
   border-radius: 50px;
   background-color: white;

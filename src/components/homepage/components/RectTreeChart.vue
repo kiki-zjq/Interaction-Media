@@ -72,7 +72,7 @@ export default {
         children:[
             {
                 name:'JVM',  //children里面内容介绍的链接https://blog.csdn.net/TZ845195485/article/details/93238857?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158591779319724843358393%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158591779319724843358393&biz_id=0&utm_source=distribute.pc_search_result.none-task-blog-all_SOOPENSEARCH-1
-                value:'400',
+                value:'600',
 				children:[
                     {
                         name:'总体架构',
@@ -84,19 +84,19 @@ export default {
 						children:[
 						    {
 							      name:'启动类加载器',
-							      value:'100',
+							      value:'40',
                             },
 							{
 							      name:'扩展类加载器',
-							      value:'100',
+							      value:'60',
                             },
 			       		   {
 							      name:'应用程序类加载器',
-							      value:'100',
+							      value:'30',
                             },
 				           {
 							      name:'用户自定义类加载器',
-							      value:'100',
+							      value:'70',
                             },
                                  ]
                     },
@@ -150,7 +150,7 @@ export default {
                     },
                     {
                         name:'堆内存调优简介',
-                        value:'180',
+                        value:'150',
                     },
 					{
                         name:' 四大垃圾算法GC',
@@ -158,19 +158,19 @@ export default {
 						children:[
 						    {
 							      name:'引用计数法',
-							      value:'100',
+							      value:'40',
                             },
 							{
 							      name:'复制算法',
-							      value:'100',
+							      value:'60',
                             },
 			       		   {
 							      name:'标记清除',
-							      value:'100',
+							      value:'30',
                             },			       		
 							{
 							      name:'标记整理算法',
-							      value:'100',
+							      value:'70',
                             },
                                  ]
                     },
@@ -192,19 +192,19 @@ export default {
             },
             {
                 name:'数据结构', //附chidren展开的链接https://blog.csdn.net/weixin_43774841/article/details/93366381?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158600643619725211937932%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158600643619725211937932&biz_id=0&utm_source=distribute.pc_search_result.none-task-blog-all_SOOPENSEARCH-1
-                value:'200',
+                value:'700',
                 children:[
 				    {
                         name:'栈',
-                        value:'100',
+                        value:'120',
                     },
 					{
                         name:'队列',
-                        value:'100',
+                        value:'120',
                     },
                     {
                         name:'数组',
-                        value:'150',
+                        value:'160',
                     },
                     {
                         name:'链表',
@@ -218,24 +218,24 @@ export default {
             },
             {
                 name:'基本语法',
-                value:'700',
+                value:'1000',
                 children:[				    
 				    {
-                        name:'标识符',
-                        value:'300',
+                        name:'流程控制',
+                        value:'200',
                     },
                     {
                         name:'关键字',        //关键字包含了原有的数据类型这一项
-                        value:'200',
+                        value:'120',
                     },
 
                     {
                         name:'运算符',
-                        value:'200'
+                        value:'100'
                     },
                     {
-                        name:'流程控制',
-                        value:'190',
+                        name:'标识符',
+                        value:'100',
                     },
 					{
                         name:'注释',
@@ -246,7 +246,7 @@ export default {
             },
             {
                 name:'面向对象',//children链接https://blog.csdn.net/weixin_38689154/article/details/78159273?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158600658719724843318468%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158600658719724843318468&biz_id=0&utm_source=distribute.pc_search_result.none-task-blog-all_SOOPENSEARCH-1
-                value:'600',
+                value:'1000',
                 children:[
                     {
                         name:'对象与类',
@@ -266,7 +266,7 @@ export default {
                     },
                     {
                         name:'接口',
-                        value:'130',
+                        value:'200',
                     },
 					{
                         name:'内部类',
@@ -284,7 +284,7 @@ export default {
             },
 			{
                 name:'IO流',
-                value:'600',
+                value:'400',
 				children:[
                          {
                         name:'文件',
@@ -322,7 +322,7 @@ export default {
                     },
 				    {
                         name:'多线程创建',
-                        value:'300',
+                        value:'200',
                     },
                     {
                         name:'多线程同步',
@@ -330,11 +330,11 @@ export default {
                     },
                     {
                         name:'多线程死锁',
-                        value:'200',
+                        value:'100',
                     },
                     {
                         name:'多线程通信',
-                        value:'200',
+                        value:'100',
                     },
 					{
                         name:'多线程停止',
@@ -405,34 +405,34 @@ export default {
         children:[
             {
                 name:'Tomcat',
-                value:'400',
+                value:'100',
             },
             {
                 name:'Servlet',
-                value:'400',
+                value:'180',
             },
 			{
                 name:'Requeset',
-                value:'500',
+                value:'100',
             },
 			{
                 name:'Responset',
-                value:'500',
+                value:'100',
             },
 			{
                 name:'Cookie and Session',
-                value:'600',
+                value:'100',
             },
 			{
                 name:'JSP',
-                value:'400',
+                value:'250',
             }
         ]
     },
     //--------------------
     {
-        name:'JAVA 常用框架',//附链接https://blog.csdn.net/guorui_java/article/details/104018528?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158597340519725222444953%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158597340519725222444953&biz_id=0&utm_source=distribute.pc_search_result.none-task-blog-all_SOOPENSEARCH-3
-        value:'1000',
+        name:'Java 常用框架',//附链接https://blog.csdn.net/guorui_java/article/details/104018528?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158597340519725222444953%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158597340519725222444953&biz_id=0&utm_source=distribute.pc_search_result.none-task-blog-all_SOOPENSEARCH-3
+        value:'1200',
         children:[
             {
                 name:'SSH',
@@ -474,12 +474,7 @@ export default {
 			{
                 name:'Springboot',
                 value:'600',
-                children:[
-                    {
-                        name:'MongoDB',
-                        value:'600',
-                    }
-                ]
+                
             }
         ]
     },
@@ -495,13 +490,17 @@ export default {
             {
                 name:'机器学习 Machine Learning',
                 value:'400'
+            },
+            {
+                name:'Elastic Search',
+                value:'500'
             }
         ]
     }
 ],
 
                     levels: [
-                        {   color:['#FF4F4F', '#EFBB36','#39A7F5','#FC58C8'],
+                        {   color:['#FF4F4F', '#EFBB36','#39A7F5','#FC58C8','#67C23A'],
                             itemStyle: {
                                 borderColor: 'white',
                                 borderWidth: 4,

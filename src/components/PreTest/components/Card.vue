@@ -19,11 +19,19 @@
             </div>
 
             <el-row class='button'>
-                <el-col :span='6'>
-                 <el-button style="display:inline-block" type="primary" @click='handleClick' round>{{buttonLabel}}</el-button>
+                <el-col :span='3'>
+                 <el-button style="display:inline-block" type="success" @click='handleClick' round>{{buttonLabel}}</el-button>
+                </el-col>
+                <el-col :span='3'>
+                 <el-button style="display:inline-block" type="danger" @click='handleClickErr' round>此题有误</el-button>
                 </el-col>
                 <el-col :span='6' :offset='2'>
-                 <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage" :color="customColors"></el-progress>
+                 <el-progress 
+                    style="margin-top:10px;"
+                    :text-inside="true" 
+                    :stroke-width="24" 
+                    :percentage="percentage" 
+                    :color="customColors"></el-progress>
                 </el-col>
             </el-row>
         </el-card>
@@ -69,6 +77,18 @@ export default {
       };
     },
     methods:{
+        handleClickErr(){
+            this.$prompt('请输入错误原因','此题有误',{
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            }).then(({value})=>{
+                this.$message({
+                    type: 'warning',
+                    message: '此题错误已上传，相关人员将会进行审核'
+                });
+
+            })
+        },
         handleClick(){
 
             if(this.radio == -1){
