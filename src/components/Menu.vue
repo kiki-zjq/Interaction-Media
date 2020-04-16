@@ -74,7 +74,7 @@
       <el-menu-item index="3" @click='handleClick(3)'>
         <template slot='title'>
           <i class="el-icon-document"></i>
-          <span slot="title">{{language=='Chinese'?'经历':'EXPERIENCE'}}</span>
+          <span slot="title">{{language=='Chinese'?'JavaSE':'JavaSE'}}</span>
           <i style='margin-left:20px' v-if="know[0]" class="el-icon-success"></i>
         </template>
       </el-menu-item>
@@ -82,7 +82,7 @@
       <el-menu-item index="5" @click='handleClick(5)'>
         <template slot='title'>
           <i class="el-icon-suitcase"></i>
-          <span slot="title">{{language=='Chinese'?'项目':'PROJECT'}}</span>
+          <span slot="title">{{language=='Chinese'?'JavaWeb':'JavaWeb'}}</span>
           <i style='margin-left:20px' v-if="know[1]" class="el-icon-success"></i>
         </template>
       </el-menu-item>
@@ -90,11 +90,27 @@
       <el-menu-item index="6" @click='handleClick(6)'>
         <template slot='title'>
           <i class="el-icon-reading"></i>
-          <span slot="title">{{language=='Chinese'?'证书':'CERTIFICATION'}}</span>
+          <span slot="title">{{language=='Chinese'?'Java 常用框架':'Java Frame'}}</span>
           <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
         </template>
       </el-menu-item>
 
+
+      <el-menu-item index="6" @click='handleClick(6)'>
+        <template slot='title'>
+          <i class="el-icon-reading"></i>
+          <span slot="title">{{language=='Chinese'?'数据库':'Database'}}</span>
+          <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
+        </template>
+      </el-menu-item>
+
+      <el-menu-item index="6" @click='handleClick(6)'>
+        <template slot='title'>
+          <i class="el-icon-reading"></i>
+          <span slot="title">{{language=='Chinese'?'课后测试':'Final Test'}}</span>
+          <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
+        </template>
+      </el-menu-item>
       <!-- <el-menu-item index="4" @click='handleClick(4)'>
         <i class="el-icon-setting"></i>
         <span slot="title">其他  OTHERS</span>

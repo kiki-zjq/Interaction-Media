@@ -20,7 +20,7 @@
       <div class='content'>
         <router-view />
       </div>
-
+      <div style="border:black solid 10px;width:100%;height:2500px"></div>
       
     </div>
 
@@ -93,14 +93,22 @@ Menu{
   width:100%;
   /* border:black solid 1px; */
   position: relative;
-  min-height: 1600px;
+  min-height: 2000px;
   min-width: 1200px;
   border-radius: 50px;
   background-color: white;
   border-radius:0 0 20px 20px;
+  
   /* overflow:hidden; */
 }
 
+.main-part:after{
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
 .menu{
   width:30%;
   padding-left:10%;
@@ -117,7 +125,7 @@ Menu{
   margin-left:4%;
   /* border:black solid 1px; */
   position: absolute;
-  float:left;
+  /* float:left; */
 }
 
 .fix{
