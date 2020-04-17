@@ -8,6 +8,7 @@
          <el-menu
       :collapse="isCollapse"
       :default-active="active"
+      :unique-opened="true"
       class="el-menu-vertical-demo main-menu"
       @open="handleOpen"
       @close="handleClose"
@@ -71,13 +72,42 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item index="3" @click='handleClick(3)'>
+      <!------------------------------------------------------------------------------------>
+       <el-submenu index='3'>
         <template slot='title'>
-          <i class="el-icon-document"></i>
-          <span slot="title">{{language=='Chinese'?'JavaSE':'JavaSE'}}</span>
-          <i style='margin-left:20px' v-if="know[0]" class="el-icon-success"></i>
+          <i class="el-icon-menu"></i>
+            <span slot="title">{{language=='Chinese'?'JavaSE':'JavaSE'}}</span>
+            <i style='margin-left:20px' v-if="know[0]" class="el-icon-success"></i>
         </template>
-      </el-menu-item>
+        <el-menu-item-group style='padding-left:20px;font-weight:300'>
+
+          <el-menu-item index="3-1" @click='handleClick(3.1)'>
+            {{language=='Chinese'?'基本语法':'Basic Syntax'}}
+          </el-menu-item>
+
+          <el-menu-item index="3-2" @click='handleClick(3.2)'>
+            {{language=='Chinese'?'面向对象':'Object-oriented'}}
+          </el-menu-item>
+
+          <el-menu-item index="3-3" @click='handleClick(3.3)'>
+            {{language=='Chinese'?'数据结构':'Data Structure'}}
+          </el-menu-item>
+
+          <el-menu-item index="3-4" @click='handleClick(3.4)'>
+            {{language=='Chinese'?'JVM':'JVM'}}
+          </el-menu-item>
+
+          <el-menu-item index="3-5" @click='handleClick(3.5)'>
+            {{language=='Chinese'?'多线程':'Multi-process'}}
+          </el-menu-item>
+
+
+        </el-menu-item-group>
+      </el-submenu>
+      
+      <!------------------------------------------------------------------------------------>
+
+
 
       <el-menu-item index="5" @click='handleClick(5)'>
         <template slot='title'>
@@ -197,6 +227,11 @@ export default {
             case 1.1:this.$router.push('/#anchor');break;
             case 1.2:this.$router.push('/#skill');break;
             case 1.3:this.$router.push('/#contact');break;
+            case 3.1:this.$router.push('/JavaSE/Syntax');break;
+            case 3.2:this.$router.push('/JavaSE/ObjectOriented');break;
+            case 3.3:this.$router.push('/JavaSE/DataStructure');break;
+            case 3.4:this.$router.push('/JavaSE/JVM');break;
+            case 3.5:this.$router.push('/JavaSE/MultiProcess');break;
           }
       },
     },
@@ -218,5 +253,6 @@ ul.el-menu-vertical-demo.main-menu.el-menu{
     border-radius:20px;
     text-align: left;
     background-color:"#fafafa";
+
 }
 </style>

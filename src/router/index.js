@@ -6,6 +6,8 @@ import Experience from '@/components/experience/index.vue'
 import Others from '@/components/others/index.vue'
 import Projects from '@/components/projects/index.vue'
 import Certification from '@/components/certification/index.vue'
+import BasicSyntax from '@/components/JavaSE/BasicSyntax/index.vue'
+
 
 Vue.use(Router)
 
@@ -40,6 +42,11 @@ export default new Router({
       path:'/certification',
       name:'Certification',
       component:Certification
+    },
+    {
+      path:'/JavaSE/Syntax',
+      name:'BasicSyntax',
+      component:BasicSyntax
     }
   ],
   scrollBehavior (to, from, savedPosition) {
