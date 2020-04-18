@@ -43,7 +43,7 @@
         </div>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
@@ -70,7 +70,7 @@
         </ul>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(2)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
@@ -98,7 +98,7 @@
         </ul>
         <span style='margin-left:30px'>在后面的章节中我们会深入讨论 Java 修饰符。</span><br/>
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
@@ -138,7 +138,7 @@
         </div>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(4)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(4)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(4)'></el-button>
         </div>
@@ -149,6 +149,7 @@
         <div class='end-block'>
             
             <el-button type="danger" @click="dialogVisible = true" round>本章报告</el-button>
+            <el-button type="warning" @click="testVisible = true" round>章节小测</el-button>
             <el-button type="success" round>下一章</el-button>
         </div>
         <!---------------------------------------------------------->
@@ -165,7 +166,7 @@
                 <br /><br />
 
                 <span v-if='unknow.length!=0'>
-                <b>本章重点:</b> <span style='font-weight:bold;color:#E6A23C' v-for="(u,index) in unknow" :key="index">{{u}} </span>
+                <b>本章重点:</b> <span style='font-weight:bold;color:#E6A23C;margin-right:1em' v-for="(u,index) in unknow" :key="index">{{u}} </span>
                 </span>
             </div>
 
@@ -177,6 +178,34 @@
                 <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
             </span>
             </el-dialog>
+
+        <!---------------------------------------------------------->
+        <el-dialog
+            title="章节小测"
+            :visible.sync="testVisible"
+            width="30%"
+            :before-close="handleClose"
+            >
+            <el-card class="box-card">
+                <div class="test-question">
+                    <b>Q: 以下哪个是合法的标识符？</b>
+                </div>
+                
+                <div class="test-select" style='margin:20px 0'>
+                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>default</el-radio>
+                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>123abc</el-radio>
+                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>_$112as</el-radio>
+                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>-$kiki</el-radio>
+                </div>
+
+                <div class="test-confirm" style='text-align:right'>
+                    <el-button type="primary" @click="testAnswer" >确 定</el-button>
+                </div>
+
+            </el-card>
+
+        </el-dialog>
+
     </div>
 
 </template>
@@ -187,7 +216,9 @@
 export default {
      data() {
       return {
+        select:-1,
         dialogVisible: false,
+        testVisible: false,
         know : [],
         unknow:[],
       };
@@ -240,6 +271,25 @@ export default {
             this.unknow.push(value)
             if(this.know.indexOf(value)!=-1){
                 this.know.splice(this.know.indexOf(value),1);
+            }
+        },
+        testAnswer(){
+            if(this.select==3){
+                this.$message({
+                    message: '恭喜你，回答正确',
+                    type: 'success'
+                });
+            }else{
+                 this.$message.error('回答错误');
+            }
+        },
+        handleClose(){
+            this.select = -1;
+            this.testVisible = false;
+        },
+        clickNote(value){
+            switch(value){
+                case 1:this.$emit('note','我的第一个Java程序');break;
             }
         }
 

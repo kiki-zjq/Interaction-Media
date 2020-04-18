@@ -16,7 +16,8 @@ Vue.config.productionTip = false
 const store = new Vuex.Store({
   state:{
     language:'Chinese',
-    know:[false,false,false]
+    know:[false,false,false],
+    notebook:[],
     },
   mutations:{
         changeLanguage(state){
@@ -28,6 +29,9 @@ const store = new Vuex.Store({
         },
         changeKnow(state,know){
           state.know = know
+        },
+        changeNote(state,notebook){
+          state.notebook = notebook
         }
     },
   getters: {},
