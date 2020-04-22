@@ -18,18 +18,25 @@
                 :subTitle='obj.subTitle' 
                 :nowTime='obj.nowTime'
                 :note='obj.note'
+                :index='index'
                 @save='handleSave'
-                @cancel='handleCancel'
+                @delete='handleDelete'
             />
 
             <EditCard 
                 :title='title'
                 :subTitle='subTitle' 
                 :nowTime='nowTime'
+                :note='note'
                 @save='handleSave'
                 @cancel='handleCancel'
                 />
+            
+            
+
         </el-drawer>
+
+        <!-- <el-button type="warning" class="show-note" icon="el-icon-download" circle></el-button> -->
 
     </div>
 </template>
@@ -56,6 +63,18 @@ Date.prototype.Format = function (fmt) {
     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 }
+
+$(window).scroll( function() {
+        if(document.documentElement.scrollTop<=130){
+            $(".show-note").fadeOut(500);
+           //console.log(document.documentElement.scrollTop);
+        }
+        else{
+            $(".show-note").fadeIn(500);
+        }
+    } );
+
+
 export default {
     data(){
         return{
@@ -64,6 +83,7 @@ export default {
             title:'',
             subTitle:'',
             nowTime:'',
+            note:'',
         }
     },
     components:{
@@ -77,7 +97,7 @@ export default {
             this.drawer = true
             this.title = 'JavaSE'
             this.nowTime = new Date().Format("yyyy-MM-dd HH:mm:ss")
-            this.subTitle = '我的第一个Java程序'
+            this.subTitle = note
         },
         handleSave(title,subTitle,nowTime,note){
             var obj = {
@@ -89,6 +109,25 @@ export default {
             this.notebook.push(obj)
             this.$store.commit('changeNote',this.notebook)
             console.log(this.notebook)
+            this.nowTime = new Date().Format("yyyy-MM-dd HH:mm:ss")
+            this.note = ''
+            // this.drawer = false;
+            // this.drawer = true;
+            this.$message({
+                message: 'Note saved successfully',
+                type: 'success'
+                });
+        },
+        handleCancel(){
+            this.drawer = false;
+        },
+        handleDelete(index){
+            this.notebook.splice(index,1)
+            this.$store.commit('changeNote',this.notebook)
+            this.$message({
+                message: 'Note deleted successfully',
+                type: 'warning'
+                });
         }
     },
     computed:{
@@ -101,3 +140,22 @@ export default {
     } 
 }
 </script>
+
+<style>
+.el-drawer__body {
+    overflow: auto;
+    /* overflow-x: auto; */
+}
+
+/*2.隐藏滚动条，太丑了*/
+.el-drawer__container ::-webkit-scrollbar{
+    display: none;
+}
+
+.show-note{
+    position:fixed;
+    right:8%;
+    bottom:10%;
+}
+
+</style>

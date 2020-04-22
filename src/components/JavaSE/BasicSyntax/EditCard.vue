@@ -8,7 +8,7 @@
             <span class='note-title'>Note:</span><el-input style="margin-top:1em" type="textarea" :rows="4" v-model="note"></el-input>
             
             <el-button class='save-button' type="success" icon="el-icon-check" @click='save' circle></el-button>
-            <el-button class='delete-button' type="danger" icon="el-icon-delete" @click='cancel' circle></el-button>
+            <el-button class='delete-button' type="danger" icon="el-icon-close" @click='cancel' circle></el-button>
             
         </el-card>
     </div>
@@ -29,11 +29,15 @@ export default {
         nowTime:{
             type:String,
             default:'',
+        },
+        note:{
+            type:String,
+            default:'',
         }
     },
     data(){
         return{
-            note:'',
+            
 
         }
     },
@@ -44,7 +48,7 @@ export default {
     // },
     methods:{
         save(){
-            this.$emit('save',this.title,this.subTitle,this.nowtime,this.note)
+            this.$emit('save',this.title,this.subTitle,this.nowTime,this.note)
         },
         cancel(){
             this.$emit('cancel')

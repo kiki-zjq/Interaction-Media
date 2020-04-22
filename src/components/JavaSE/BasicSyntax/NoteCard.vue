@@ -5,10 +5,10 @@
             <p><span class='sub-title'>Sub-title:</span><b> {{subTitle}}</b></p>
             <p><span class='sub-title'>Time:</span><b> {{nowTime}}</b></p>
             <el-divider></el-divider>
-            <span class='note-title'>Note:</span><el-input style="margin-top:1em" type="textarea" :rows="4" v-model="note"></el-input>
+            <span class='note-title'>Note:</span><br /><span class='note-block'>{{note}}</span>
             
-            <el-button class='save-button' type="success" icon="el-icon-check" @click='save' circle></el-button>
-            <el-button class='delete-button' type="danger" icon="el-icon-delete" @click='cancel' circle></el-button>
+            <!-- <el-button class='save-button' type="success" icon="el-icon-check" @click='save' circle></el-button> -->
+            <el-button class='delete-button' type="danger" icon="el-icon-delete" @click='del' circle></el-button>
             
         </el-card>
     </div>
@@ -29,11 +29,20 @@ export default {
         nowTime:{
             type:String,
             default:'',
+        },
+        note:{
+            type:String,
+            default:'',
+        },
+        index:{
+            type:Number,
+            default:-1,
         }
+        
     },
     data(){
         return{
-            note:'',
+            
 
         }
     },
@@ -46,8 +55,8 @@ export default {
         save(){
             this.$emit('save',this.title,this.subTitle,this.time,this.nowTime)
         },
-        cancel(){
-            this.$emit('cancel')
+        del(){
+            this.$emit('delete',this.index)
         }
     }
   
@@ -75,6 +84,11 @@ export default {
     .note-title{
         font-weight:bold;
         color:#409EFF;
+        
+    }
+    .note-block{
+        display: inline-block;
+        margin-top:1em;
     }
 
     .save-button{
@@ -85,7 +99,7 @@ export default {
 
     .delete-button{
         position:absolute;
-        top:90px;
+        top:30px;
         right:20px;
     }
 

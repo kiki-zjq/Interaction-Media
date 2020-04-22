@@ -43,7 +43,7 @@
         </div>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
@@ -71,7 +71,7 @@
         </ul>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(2)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
@@ -99,7 +99,7 @@
         </ul>
         <span style='margin-left:30px'>We'll discuss Java modifiers in more detail in later sections.</span><br/>
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
@@ -139,7 +139,7 @@
         </div>
 
         <div class='mark-block'>
-            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(4)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(4)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(4)'></el-button>
         </div>
@@ -287,6 +287,14 @@ export default {
         handleClose(){
             this.select = -1;
             this.testVisible = false;
+        },
+        clickNote(value){
+            switch(value){
+                case 1:this.$emit('note','My First Java Program');break;
+                case 2:this.$emit('note','Basic Syntax');break;
+                case 3:this.$emit('note','Identifiers and modifiers');break;
+                case 4:this.$emit('note','Java annotations');break;
+            }
         }
 
     },

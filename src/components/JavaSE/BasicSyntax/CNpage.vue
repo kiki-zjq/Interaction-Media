@@ -290,6 +290,9 @@ export default {
         clickNote(value){
             switch(value){
                 case 1:this.$emit('note','我的第一个Java程序');break;
+                case 2:this.$emit('note','基本语法');break;
+                case 3:this.$emit('note','标识符与修饰符');break;
+                case 4:this.$emit('note','Java 注释');break;
             }
         }
 
