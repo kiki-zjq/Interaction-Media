@@ -150,7 +150,7 @@
             
             <el-button type="danger" @click="dialogVisible = true" round>本章报告</el-button>
             <el-button type="warning" @click="testVisible = true" round>章节小测</el-button>
-            <el-button type="success" round>下一章</el-button>
+            <el-button type="success" @click="nextPage()" round>下一章</el-button>
         </div>
         <!---------------------------------------------------------->
 
@@ -294,6 +294,9 @@ export default {
                 case 3:this.$emit('note','标识符与修饰符');break;
                 case 4:this.$emit('note','Java 注释');break;
             }
+        },
+        nextPage(){
+            this.$router.push('/JavaSE/ObjectOrient#header');
         }
 
     },
@@ -303,7 +306,7 @@ export default {
 
 <style scoped>
     .SyntaxContent{
-        text-align:left;
+        text-align:left
     }
 
     .SyntaxContent h2{

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id='header'>
         <CNpage v-if="language=='Chinese'" @note='handleNote'/>
         <ENpage v-if="language=='English'" @note='handleNote'/>
         
@@ -44,8 +44,8 @@
 <script>
 import CNpage from './CNpage.vue'
 import ENpage from './ENpage.vue'
-import NoteCard from './NoteCard.vue'
-import EditCard from './EditCard.vue'
+import NoteCard from '@/components/noteComponents/NoteCard.vue'
+import EditCard from '@/components/noteComponents/EditCard.vue'
 
 
 Date.prototype.Format = function (fmt) {

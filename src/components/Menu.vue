@@ -184,6 +184,14 @@ export default {
         this.active ='6';break;
       case '/JavaSE/Syntax':
         this.active='3-1';break;
+      case '/JavaSE/ObjectOrient':
+        this.active='3-2';break;
+      case '/JavaSE/DataStructure':
+        this.active='3-3';break;
+      case '/JavaSE/JVM':
+        this.active='3-4';break;
+      case '/JavaSE/MultiProcess':
+        this.active='3-5';break;
       default:
         this.active='1';
     }
@@ -203,6 +211,14 @@ export default {
         this.active ='6';break;
       case '/JavaSE/Syntax':
         this.active='3-1';break;
+      case '/JavaSE/ObjectOrient':
+        this.active='3-2';break;
+      case '/JavaSE/DataStructure':
+        this.active='3-3';break;
+      case '/JavaSE/JVM':
+        this.active='3-4';break;
+      case '/JavaSE/MultiProcess':
+        this.active='3-5';break;
       }
       if(to.path=='/'){
         switch(to.hash){
@@ -233,11 +249,11 @@ export default {
             case 1.1:this.$router.push('/#anchor');break;
             case 1.2:this.$router.push('/#skill');break;
             case 1.3:this.$router.push('/#contact');break;
-            case 3.1:this.$router.push('/JavaSE/Syntax');break;
-            case 3.2:this.$router.push('/JavaSE/ObjectOriented');break;
-            case 3.3:this.$router.push('/JavaSE/DataStructure');break;
-            case 3.4:this.$router.push('/JavaSE/JVM');break;
-            case 3.5:this.$router.push('/JavaSE/MultiProcess');break;
+            case 3.1:this.$router.push('/JavaSE/Syntax#header');break;
+            case 3.2:this.$router.push('/JavaSE/ObjectOrient#header');break;
+            case 3.3:this.$router.push('/JavaSE/DataStructure#header');break;
+            case 3.4:this.$router.push('/JavaSE/JVM#header');break;
+            case 3.5:this.$router.push('/JavaSE/MultiProcess#header');break;
           }
       },
     },

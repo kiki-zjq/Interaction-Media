@@ -151,7 +151,7 @@
             
             <el-button type="danger" @click="dialogVisible = true" round>Chapter Reports</el-button>
             <el-button type="warning" @click="testVisible = true" round>Chapter Test</el-button>
-            <el-button type="success" round>Next Chapter</el-button>
+            <el-button type="success" @click="nextPage()" round>Next Chapter</el-button>
         </div>
         <!---------------------------------------------------------->
 
@@ -295,6 +295,9 @@ export default {
                 case 3:this.$emit('note','Identifiers and modifiers');break;
                 case 4:this.$emit('note','Java annotations');break;
             }
+        },
+        nextPage(){
+            this.$router.push('/JavaSE/ObjectOrient#header');
         }
 
     },

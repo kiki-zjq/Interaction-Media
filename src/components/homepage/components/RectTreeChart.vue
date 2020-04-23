@@ -375,21 +375,7 @@ export default {
             {
                 name:'Redis',
                 value:'600',
-                children:[
-                    {
-                        name:'NumPy',
-                        value:'100',
-                    },
-                    {
-                        name:'python爬虫',
-                        value:'300',
-                    },
-                    {
-                        name:'Pandas',
-                        value:'100',
-                    }
-
-                ],
+                
 
             },
             {

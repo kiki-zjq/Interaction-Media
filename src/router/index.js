@@ -7,6 +7,11 @@ import Others from '@/components/others/index.vue'
 import Projects from '@/components/projects/index.vue'
 import Certification from '@/components/certification/index.vue'
 import BasicSyntax from '@/components/JavaSE/BasicSyntax/index.vue'
+import ObjectOrient from '@/components/JavaSE/ObjectOrient/index.vue'
+import DataStructure from '@/components/JavaSE/DataStructure/index.vue'
+import JVM from '@/components/JavaSE/JVM/index.vue'
+import MultiProcess from '@/components/JavaSE/MultiProcess/index.vue'
+
 
 
 Vue.use(Router)
@@ -47,7 +52,27 @@ export default new Router({
       path:'/JavaSE/Syntax',
       name:'BasicSyntax',
       component:BasicSyntax
-    }
+    },
+    {
+      path:'/JavaSE/ObjectOrient',
+      name:'ObjectOrient',
+      component:ObjectOrient
+    },
+    {
+      path:'/JavaSE/DataStructure',
+      name:'DataStructure',
+      component:DataStructure
+    },
+    {
+      path:'/JavaSE/JVM',
+      name:'JVM',
+      component:JVM
+    },
+    {
+      path:'/JavaSE/MultiProcess',
+      name:'MultiProcess',
+      component:MultiProcess
+    },
   ],
   scrollBehavior (to, from, savedPosition) {
     if (to.hash) {
