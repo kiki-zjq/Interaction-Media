@@ -57,7 +57,6 @@
                 
             </div>
         </el-drawer>
-        <dragon />
 
 </div>
 </template>
@@ -66,14 +65,13 @@
 import Card from './components/Card';
 import resultCard from './components/resultCard';
 import checkCard from './components/checkCard';
-import dragon from '@/dragon-loading-master/dragon'
+
 
 export default {
     components:{
         Card,
         resultCard,
         checkCard,
-        dragon
     },
     data() {
       return {

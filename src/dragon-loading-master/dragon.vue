@@ -17,11 +17,11 @@
         <div class="fire-wrapper">
             <div class="fire"></div>
         </div>
-        <div class="progress">
+        <!-- <div class="progress">
             <div class="outer">
                 <div class="inner"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </template>
