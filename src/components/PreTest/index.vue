@@ -26,6 +26,9 @@
 
             <resultCard
                 v-if = !this.isTest
+                :know='alreadyKnow'
+                :unknow='dontKnow'
+                :correct='correctNum'
                 @check = "drawer=true"
             />
         <!---------------------------------------------------------------->
@@ -75,6 +78,9 @@ export default {
     },
     data() {
       return {
+        correctNum:0,
+        alreadyKnow:[],
+        dontKnow:[],
         drawer:false,
         isTest:true,
         percentage:10,
@@ -255,8 +261,66 @@ export default {
             this.myAnswers[this.index] = myAnswer;
             console.log(this.know);
             console.log(this.myAnswers);
+            let countSE = 0 , countStruct = 0 , countWeb = 0, countBase = 0;
+            this.know.forEach( (element,index) => {
+                if (element)this.correctNum+=1;
+
+                if(index<3){
+                    if(element){
+                        countSE++
+                    }
+                }
+
+                if(index>=3 && index <5){
+                    if(element){
+                        countStruct++
+                    }
+                }
+
+                if(index >= 5 && index<8){
+                    if(element){
+                        countWeb ++
+                    }
+                }
+
+                if(index >= 8 && index<10){
+                    if(element){
+                        countBase ++
+                    }
+                }
+
+
+            });
+
+            let storeKnow = [false,false,false,false]
+            if(countSE>=2){
+                storeKnow[0] = true
+                this.alreadyKnow.push('JavaSE')
+            }else{
+                this.dontKnow.push('JavaSE')
+            }
+            if(countWeb>=2){
+                storeKnow[1] = true
+                this.alreadyKnow.push('JavaWeb')
+            }else{
+                this.dontKnow.push('JavaWeb')
+            }
+            if(countStruct>=1){
+                storeKnow[2] = true
+                this.alreadyKnow.push('Java 常用框架')
+            }else{
+                this.dontKnow.push('Java 常用框架')
+            }
+            if(countBase>=1){
+                storeKnow[3] = true
+                this.alreadyKnow.push('数据库')
+            }else{
+                this.dontKnow.push('数据库')
+            }
+            
+
             this.isTest = false;
-            this.$store.commit('changeKnow',this.know)
+            this.$store.commit('changeKnow',storeKnow)
         }
     },
     mounted(){

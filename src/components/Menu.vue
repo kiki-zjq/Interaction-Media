@@ -130,7 +130,7 @@
         <template slot='title'>
           <i class="el-icon-reading"></i>
           <span slot="title">{{language=='Chinese'?'数据库':'Database'}}</span>
-          <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
+          <i style='margin-left:20px' v-if="know[3]" class="el-icon-success"></i>
         </template>
       </el-menu-item>
 
@@ -138,7 +138,7 @@
         <template slot='title'>
           <i class="el-icon-reading"></i>
           <span slot="title">{{language=='Chinese'?'课后测试':'Final Test'}}</span>
-          <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
+          <!-- <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i> -->
         </template>
       </el-menu-item>
       <!-- <el-menu-item index="4" @click='handleClick(4)'>
