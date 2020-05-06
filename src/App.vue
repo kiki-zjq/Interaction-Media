@@ -2,30 +2,19 @@
   <div id="app">
     <IntroPage v-bind:language='language' v-on:changeLang='changeLang()'/>
     <GetStart id='anchor' name='anchor'/>
-    
-    <!-- <el-row>
-      <el-col :span="4" :offset="2"> 
-        <div class="menu">
-          <Menu />
-        </div>
-      </el-col>
-      <el-col :span="14" :offset="2">
-        <router-view/>
-      </el-col>
-    </el-row> -->
-    <div class='main-part'>
-      <div class='menu' >
+  
+
+    <div class="Wrapper">
+      <div class='Menu'>
         <Menu :language='language' />
       </div>
-      <div class='content' id='content'>
-        <router-view />
+      <div class="View">
+        <router-view/>
       </div>
-      <!-- <div class='PropUp' style="border:black solid 10px;width:100%;height:2500px"></div> -->
-      
     </div>
 
-    <!-- <Footer class='footer'/>
-      -->
+    <Footer class='footer'/>
+     
   </div>
 </template>
 
@@ -66,26 +55,6 @@ export default {
   },
 };
 
-// $(document).ready(function(){
-//   let contentHeight = document.getElementById('content').clientHeight
-//   contentHeight = contentHeight <= 1500? contentHeight : contentHeight+300
-//   console.log(contentHeight)
-//   $(".PropUp").css("height",contentHeight);
-// })
-$(window).scroll( function() {
-        let h = window.screen.availHeight;
-        if(document.documentElement.scrollTop>=h){
-            $(".menu").addClass("fix");
-           //console.log(document.documentElement.scrollTop);
-        }
-        else{
-             $(".menu").removeClass("fix");
-        }
-
-        
-
-
-    } );//这一段以后优化一下，加一个回调函数让他不要一直在那里判断
 </script>
 
 <style>
@@ -101,61 +70,65 @@ body{
   margin-top: 60px;
   text-align: center;
 }
-/* .main-part{
-  position:relative;
-}
-Menu{
-  position:absolute;
-} */
 
 .main-part{
   width:100%;
-  /* border:black solid 1px; */
   position: relative;
   min-height: 800px;
   min-width: 1200px;
   border-radius: 50px;
   background-color: white;
   border-radius:0 0 20px 20px;
-  
+  border:black solid 5px;
   /* overflow:hidden; */
 }
 
-.main-part:after{
-            content: ".";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
-        }
-.menu{
-  width:30%;
-  padding-left:10%;
-  padding-top:5vh;
-  box-sizing: border-box;
-  /* border:black solid 1px; */
-  position:absolute;
+.Wrapper{
+  min-height:800px;
+  min-width: 1250px;
+  width:100%;
 }
 
+.Wrapper:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.Menu{
+  width:30%;
+  padding-left:10%;
+  padding-top: 5vh;
+  min-width: 400px;
+  box-sizing: border-box;
+  float:left;
+  position: sticky;
+  top:5vh;
+}
+
+.View{
+  float:left;
+  width:60%;
+  margin-top:1%;
+  margin-left:4%;
+}
 .content{
   width:60%;
-  right:5%;
   margin-top:1%;
   margin-left:4%;
   /* border:black solid 1px; */
-  position: absolute;
+ 
   /* float:left; */
 }
-
 .fix{
   position:fixed;
   top:3vh;
   left:0
 }
-
 .footer{
-  position: relative;
-  
-  
+  margin-top:100px;
+  min-width: 1250px;
 }
 </style>

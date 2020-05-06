@@ -61,7 +61,8 @@ export default {
         box-sizing: border-box;
         padding:20px;
         color:white;
-        background-color: #404040;
+        /* background-color: #404040; */
+        background-color: #363645;
         width:100%;
         height:40vh;
         position: relative;        
