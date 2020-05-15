@@ -8,51 +8,89 @@
             Array
         </div>
 
-        <span style='margin-left:30px'>Let's look at a simple Java program that prints <i>Hello World</i></span>
+        <span style='margin-left:30px'>Arrays are one of the most important data structures in every programming language, and different languages implement and process arrays differently.</span><br/>
+        <span style='margin-left:30px'>The array provided in the Java language is used to store fixed-size elements of the same type.</span><br/>
+        <span style='margin-left:30px'>Instead of declaring 100 independent variables, you can declare an array variable, such as Numbers [100]</span><br/>
+        <el-divider></el-divider>
+        <span style='margin-left:30px;font-size:18px;font-weight:bold'>Declare Array Variables</span><br/><br/>
 
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// print Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
-        </div>
+        <span style='margin-left:30px'>You must declare an array variable before you can use an array in your program. Here's the syntax for declaring array variables:</span><br/>
         
-        <span style='margin-left:30px'>Next we will show you how to save, compile, and run this program：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">dataType</span>[ ] <span style="color:#FFF273"> arrayRefVar</span> ;
+            <span style='color:#67AB7D'>// The better way!</span><br/>
+            <span style='color:#B6B6B6'>or</span><br />
+            <span style="color:#FFB86C">dataType</span> <span style="color:#FFF273"> arrayRefVar</span> [ ] ;
+            <span style='color:#67AB7D'>// Not so good!</span><br/>
+        </div><br />
 
+        <el-divider></el-divider>
+        <span style='margin-left:30px;font-size:18px;font-weight:bold'>Create an Array</span><br/><br/>
+
+        <span style='margin-left:30px'>The Java language uses the<b> new </b> to create an array, with the following syntax:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273"> arrayRefVar</span> = <span style='color:#19F9D8'>new</span> <span style="color:#FFB86C">dataType</span>
+            [ <span style='color:#B6B6B6'>arraySize</span> ] ;
+        </div><br />
+        
+
+        <span style='margin-left:30px'>The syntax above does two things:</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>Open the code editor and add the code above</li>
-            <li>Save the file name as: helloworld.java</li>
-            <li>Open the CMD command window and enter the location of the target file, assuming C:\</li>
-            <li>In the command line window, type javac helloworld.java and press enter to compile the code</li>
-            <li>Key in java HelloWorld and press enter to run the program.</li>
+            <li>Use dataType[arraySize] create an array.</li>
+            <li>Assign a reference to the newly created array to the variable arrayRefVar.</li>
         </ul>
 
-        <span style='margin-left:30px'>You will see <i>Hello World</i> in the cmd</span><br/>
-
+        <span style='margin-left:30px'>The declaration of array variables and the creation of arrays can be done in a single statement, as follows:</span><br/>
         <div class='code-block'>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> javac</span> HelloWorld.java</span><br/>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> java</span> HelloWorld </span><br />
-            <span>Hello World</span>
-        </div>
+            <span style="color:#FFB86C">dataType</span> [ ] <span style="color:#FFF273"> arrayRefVar</span> = <span style='color:#19F9D8'>new</span> <span style="color:#FFB86C">dataType</span>
+            [ <span style='color:#B6B6B6'>arraySize</span> ] ;<br />
+            <span style='color:#B6B6B6'>or</span><br/>
+            <span style="color:#FFB86C">dataType</span> [ ] <span style="color:#FFF273"> arrayRefVar</span> = { <span style='color:#B6B6B6'>value0,value1 ... valuek</span> }
+        </div><br />
+        
+        <span style='margin-left:30px'>The elements of an array are accessed by index. The array index starts at 0, so the index value goes from 0 to arrayrefvar.length-1.</span><br/>
+        <img style="margin-top:30px;margin-left:40px;" src='./array.png'/>
+    
+
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title second-title'>
-            Vector
+            Hashtable
         </div>
 
-       
+        <span style='margin-left:30px'>Hashtable is part of the original java.util and is a dictionary-specific implementation.</span><br/>
+        <span style='margin-left:30px'>Like HashMap, Hashtable stores key/value pairs in the Hashtable. When using a hash table, specify the object to use as the key and the value to link to that key.</span><br/>
+        <span style='margin-left:30px'>The key is then hashed, and the resulting hash code is used as the index of the values stored in the table.</span><br/><br />
+        <span style='margin-left:30px'>Hashtable defines four constructors.</span><br/><br/>
+        <span style='margin-left:30px'>The first is the default constructor:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> ( )
+        </div><br />
+
+        <span style='margin-left:30px'>The second constructor creates a hash table of the specified size:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size </span>)
+        </div><br />
+
+        <span style='margin-left:30px'> The third constructor creates a hash table of a specified size and specifies the fillRatio by fillRatio.</span><br/>
+        <span style='margin-left:30px'> The fill ratio must be between 0.0 and 1.0, which determines how full the hash table is before it is resized:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size</span>,
+            <span style="color:#19F9D8">float</span> <span style='color:#B6B6B6'>fillRatio </span>)
+        </div><br />
+
+        <span style='margin-left:30px'>The fourth constructor creates a hash table that initializes elements in M.</span><br/>
+        <span style='margin-left:30px'>The hash table is set to twice the capacity of M:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> ( <span style="color:#19F9D8">Map</span> <span style='color:#B6B6B6'>m </span>)
+        </div><br />
+
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
@@ -209,7 +247,7 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#67C23A');this.knowPush("Array");break;
-                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("Vector");break;
+                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("Hashtable");break;
                 case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("Vector");break;
                 case 4:$('.forth-title').css('background-color','#67C23A');this.knowPush("Stack");break;
             }
@@ -227,7 +265,7 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#E6A23C');this.unknowPush("Array");break;
-                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("Vector");break;
+                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("Hashtable");break;
                 case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("Vector");break;
                 case 4:$('.forth-title').css('background-color','#E6A23C');this.unknowPush("Stack");break;
             }
@@ -271,7 +309,7 @@ export default {
         clickNote(value){
             switch(value){
                 case 1:this.$emit('note','Array');break;
-                case 2:this.$emit('note','Vector');break;
+                case 2:this.$emit('note','Hashtable');break;
                 case 3:this.$emit('note','Vector');break;
                 case 4:this.$emit('note','Stack');break;
             }
