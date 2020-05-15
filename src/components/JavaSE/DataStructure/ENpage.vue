@@ -49,26 +49,10 @@
         </div>
         <!---------------------------------------------------------->
         <div class='sub-title second-title'>
-            Linked List
+            Vector
         </div>
 
-        <span style='margin-left:30px'>A Java program can be thought of as a collection of objects that work together by calling each other's methods. </span><br/>
-        <span style='margin-left:30px'>Here are the basic concepts.</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>Object: </b> An object is an instance of a class that has state and behavior.</li>
-            <li><b>Class: </b> A class is a template that describes the behavior and state of a class of objects.</li>
-            <li><b>Methods: </b> A method is a behavior, and a class can have many methods. Logic operations, data modifications, and all actions are done in methods.</li>
-            <li><b>Instance: </b> Each object has unique instance variables, and the state of the object is determined by the values of those instance variables.</li>
-        </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>When writing Java programs, note the following:</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>Case sensitive: </b> Java is case-sensitive, which means that the identifier Hello is different from Hello.</li>
-            <li><b>Class name: </b> For all classes, the first letter of the class name should be capitalized. If the class name consists of several words, the first letter of each word should be capitalized.</li>
-            <li><b>Method name: </b> All method names should begin with a lowercase letter. If the method name contains several words, capitalize each word that follows.</li>
-            <li><b>Source file name: </b> The source file name must be the same as the class name. When saving files, you should use the class name as the file name (remember Java is case-sensitive).</li>
-            <li><b>Main method: </b> All Java program starts by <b>public static void main(String [ ]args) </b>method</li>
-        </ul>
+       
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
@@ -76,66 +60,62 @@
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
 
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title third-title'>
-            Linked List
+            Vector
         </div>
 
-        <span style='margin-left:30px'>All the components of Java require names. Class names, variable names, and method names are called identifiers.</span><br/>
-        <span style='margin-left:30px'>There are a few things to note about Java identifiers:</span><br/>
+        
+         <span style='margin-left:30px'>The Vector class implements a dynamic array. Similar to the ArrayList, but different:</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>All identifiers should begin with A letter (a-z or a-z), A dollar sign ($), or an underscore (_)</li>
-            <li>The first character can be followed by any combination of letters (a-z or a-z), dollar characters ($), underscores (_), or Numbers</li>
-            <li>Keywords cannot be used as identifiers</li>
-            <li>Identifiers are case sensitive</li>
-            <li>Examples of legal identifiers: age、$salary、_value、__1_value</li>
-            <li>Examples of illegal identifiers: 123abc、-salary</li>
+            <li>Vector is accessed synchronously.</li>
+            <li>Vector contains many traditional methods that are not part of the collection framework.</li>
         </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>Like other languages, Java can use modifiers to modify methods and properties in a class. There are two main types of modifiers:</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li>Access control modifier : <b>default, public , protected, private</b></li>
-            <li>Non-access control modifier : <b>final, abstract, static, synchronized</b></li>
-        </ul>
-        <span style='margin-left:30px'>We'll discuss Java modifiers in more detail in later sections.</span><br/>
+
+        <span style='margin-left:30px'>Vector is mainly used in cases where the size of an array is not known in advance, or where an array can be changed in size.</span><br/>
+        <span style='margin-left:30px'>The Vector class supports four constructors.</span><br/><br/>
+
+        <span style='margin-left:30px'>The first constructor creates a default vector with a default size of 10:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273">Vector</span> ( )
+        </div><br />
+
+        <span style='margin-left:30px'>The second constructor creates a vector of specified size:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273">Vector</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size </span>)
+        </div><br />
+
+        <span style='margin-left:30px'> The third constructor creates a vector of the specified size, and the increment is specified with incr. Increment represents the number of elements that the vector increases each time:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273">Vector</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size</span>,
+            <span style="color:#19F9D8">int</span> <span style='color:#B6B6B6'>incr </span>)
+        </div><br />
+
+        <span style='margin-left:30px'>The fourth constructor creates a vector containing the elements of set c:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273">Vector</span> ( <span style="color:#19F9D8">Collection</span> <span style='color:#B6B6B6'>c </span>)
+        </div><br />
+
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
 
-
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title forth-title'>
-            Heap
+            Stack
         </div>
 
-        <span style='margin-left:30px'>Similar to C/C++, Java also supports single-line and multi-line comments. Characters in comments are ignored by the Java compiler.</span><br/>
+        <span style='margin-left:30px'>The stack is a subclass of Vector that implements a standard<b> lifo stack</b>.</span><br/><br/>
+        <span style='margin-left:30px'>You can think of a stack as a vertically distributed stack of objects, and when you add a new element, you put the new element on top of the other elements.</span><br/><br/>
+        <span style='margin-left:30px'>When you take an element from a stack, you take an element from the top of the stack. In other words, the last element to be pushed is the first to be pulled.</span><br/><br/>
+        <span style='margin-left:30px'>The stack defines only the default constructor to create an empty stack. In addition to including all the methods defined by Vector, the stack also defines some of its own methods.</span><br/>
 
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            
-            <span style='margin-left:20px'><span style="color:#67AB7D">/* This is the first java program</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * It will print Hello World</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * This is an example of a multi-line comment</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * /</span></span><br/>
-            
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
-
-            <br />
-            <span style='margin-left:40px'><span style="color:#67AB7D"> // This is an example of a single line comment</span></span><br/>
-            <span style='margin-left:40px'><span style="color:#67AB7D"> /* This is also an example of a single line comment */</span></span><br/>
-            <br />
-
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// print Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273">Stack</span> ( )
         </div>
 
         <div class='mark-block'>
@@ -229,9 +209,9 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#67C23A');this.knowPush("Array");break;
-                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("Linked List");break;
-                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("Queue");break;
-                case 4:$('.forth-title').css('background-color','#67C23A');this.knowPush("Heap");break;
+                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("Vector");break;
+                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("Vector");break;
+                case 4:$('.forth-title').css('background-color','#67C23A');this.knowPush("Stack");break;
             }
 
             this.know = Array.from(new Set(this.know))
@@ -247,9 +227,9 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#E6A23C');this.unknowPush("Array");break;
-                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("Linked List");break;
-                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("Queue");break;
-                case 4:$('.forth-title').css('background-color','#E6A23C');this.unknowPush("Heap");break;
+                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("Vector");break;
+                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("Vector");break;
+                case 4:$('.forth-title').css('background-color','#E6A23C');this.unknowPush("Stack");break;
             }
 
             this.unknow = Array.from(new Set(this.unknow))
@@ -291,9 +271,9 @@ export default {
         clickNote(value){
             switch(value){
                 case 1:this.$emit('note','Array');break;
-                case 2:this.$emit('note','Linked List');break;
-                case 3:this.$emit('note','Queue');break;
-                case 4:this.$emit('note','Heap');break;
+                case 2:this.$emit('note','Vector');break;
+                case 3:this.$emit('note','Vector');break;
+                case 4:this.$emit('note','Stack');break;
             }
         },
         nextPage(){
@@ -336,7 +316,7 @@ export default {
         margin-top:20px;
         margin-left:20px;
         margin-bottom: 20px;
-        min-height:100px;
+        min-height:50px;
         width:80%;
         background-color: #292A2B;
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);

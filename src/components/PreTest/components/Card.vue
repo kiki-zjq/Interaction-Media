@@ -22,7 +22,7 @@
                 <el-col :span='3'>
                  <el-button style="display:inline-block" type="success" @click='handleClick' round>{{buttonLabel}}</el-button>
                 </el-col>
-                <el-col :span='3'>
+                <el-col :span='3' :offset='1'>
                  <el-button style="display:inline-block" type="danger" @click='handleClickErr' round>此题有误</el-button>
                 </el-col>
                 <el-col :span='6' :offset='2'>

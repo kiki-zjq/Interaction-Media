@@ -8,66 +8,53 @@
             对象和类
         </div>
 
-        <span style='margin-left:30px'>下面看一个简单的Java程序，它将打印字符串 <i>Hello World</i></span>
-
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// 打印 Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
-        </div>
-        
-        <span style='margin-left:30px'>下面我们将展示如何保存、编译以及运行这个程序：</span><br/>
-
+        <span style='margin-left:30px'>本章节我们重点介绍对象和类的概念</span>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>打开代码编辑器，把上面的代码添加进去</li>
-            <li>把文件名保存为：HelloWorld.java</li>
-            <li>打开 cmd 命令窗口，进入目标文件所在的位置，假设是 C:\</li>
-            <li>在命令行窗口输入 javac HelloWorld.java 按下回车键编译代码</li>
-            <li>再键输入 java HelloWorld 按下回车键就可以运行程序了。</li>
+            <li><b>对象：</b> 对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴等。</li>
+            <li><b>类：</b> 类是一个模板，它描述一类对象的行为和状态。</li>
         </ul>
-
-        <span style='margin-left:30px'>你将会在窗口看到 Hello World</span><br/>
-
-        <div class='code-block'>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> javac</span> HelloWorld.java</span><br/>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> java</span> HelloWorld </span><br />
-            <span>Hello World</span>
-        </div>
+        
+        <span style='margin-left:30px'>下图中男孩（boy）、女孩（girl）为<b>类（class）</b>，而具体的每个人为该类的<b>对象（object）</b>：</span>
+        <div style="margin:10px 0 0 40px;"><img src='./object.png'/></div>
+        
+        
+        
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
+
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title second-title'>
             构造方法
         </div>
 
-        <span style='margin-left:30px'>一个 Java 程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。以下是基本概念。</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>对象：</b> 对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴等。</li>
-            <li><b>类：</b> 类是一个模板，它描述一类对象的行为和状态。</li>
-            <li><b>方法：</b> 方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</li>
-            <li><b>实例变量：</b> 每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
-        </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>编写 Java 程序时，应注意以下几点：</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>大小写敏感：</b> Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。</li>
-            <li><b>类名：</b> 对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写。</li>
-            <li><b>方法名：</b> 所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</li>
-            <li><b>源文件名：</b> 源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Java 是大小写敏感的）。</li>
-            <li><b>主方法入口：</b> 所有的 Java 程序由 <b>public static void main(String []args) </b>方法开始执行。</li>
-        </ul>
+        <span style='margin-left:30px'>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。</span><br/>
+        <span style='margin-left:30px'>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。</span><br/>
+        <span style='margin-left:30px'>下面是一个构造方法示例：</span><br/>
+
+        <div class = 'code-block'>
+            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>Puppy</span> {</span><br/>
+            <br />
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>&nbsp;</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Default Constructor</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>
+                <span style='color:#19F9D8'>String</span> name</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Constructor with a parameter</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <br/>
+            <span>}</span><br/>
+        </div>
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
@@ -75,33 +62,62 @@
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
 
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title third-title'>
             创建对象
         </div>
 
-        <span style='margin-left:30px'>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</span><br/>
-        <span style='margin-left:30px'>关于 Java 标识符，有以下几点需要注意：</span><br/>
+        <span style='margin-left:30px'>对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
-            <li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
-            <li>关键字不能用作标识符</li>
-            <li>标识符是大小写敏感的</li>
-            <li>合法标识符举例：age、$salary、_value、__1_value</li>
-            <li>非法标识符举例：123abc、-salary</li>
+            <li><b>声明：</b>声明一个对象，包括对象名称和对象类型。</li>
+            <li><b>实例化：</b>使用关键字new来创建一个对象。</li>
+            <li><b>初始化：</b>使用new创建对象时，会调用构造方法初始化对象。</li>
         </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li>访问控制修饰符 : <b>default, public , protected, private</b></li>
-            <li>非访问控制修饰符 : <b>final, abstract, static, synchronized</b></li>
-        </ul>
-        <span style='margin-left:30px'>在后面的章节中我们会深入讨论 Java 修饰符。</span><br/>
+        <span style='margin-left:30px'>下面是一个创建对象的例子：</span><br/>
+        <div class = 'code-block'>
+            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>Puppy</span> {</span><br/>
+            <br />
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>&nbsp;</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Default Constructor</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>
+                <span style='color:#19F9D8'>String</span> <span style="color:#FFF273">name</span></span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Constructor with a parameter</span><br />
+                <span style='margin-left:40px;color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Dog name is: </span>" + <span style="color:#FFF273">name</span> ) ; 
+                <br/>
+            <span style='margin-left:20px'>}</span><br/><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>[ ] 
+            <span style='color:#FFF273'>args</span> ) {</span><br/>
+            <span style='margin-left:40px;color:#67AB7D'>// Create a Puppy object</span><br />
+            <span style='margin-left:40px'>
+                <span style='color:#FFB86C'>Puppy </span>
+                <span style='color:#FFF273'>myPuppy</span> =
+                <span style='color:#19F9D8'>new</span> <span style='color:#FFB86C'>Puppy </span>("<span style='color:#B6B6B6'>Tom</span>") ; 
+                </span><br/>
+            <span style='margin-left:20px'>}</span><br/>
+            <br/>
+            <span>}</span><br/>
+        </div>
+
+
+        <span style='margin-left:30px'>编译并运行上面的程序，会打印出下面的结果：</span><br/>
+        <div class='code-block'>
+            
+            <span>Dog name is: Tom</span>
+        </div>
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
+        <el-divider></el-divider>
 
 
         <!---------------------------------------------------------->

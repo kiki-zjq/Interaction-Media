@@ -8,67 +8,51 @@
             Object and Class
         </div>
 
-        <span style='margin-left:30px'>Let's look at a simple Java program that prints <i>Hello World</i></span>
-
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// print Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
-        </div>
-        
-        <span style='margin-left:30px'>Next we will show you how to save, compile, and run this program：</span><br/>
-
+        <span style='margin-left:30px'>This section focuses on the concepts of objects and classes</span>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>Open the code editor and add the code above</li>
-            <li>Save the file name as: helloworld.java</li>
-            <li>Open the CMD command window and enter the location of the target file, assuming C:\</li>
-            <li>In the command line window, type javac helloworld.java and press enter to compile the code</li>
-            <li>Key in java HelloWorld and press enter to run the program.</li>
+            <li><b>Object: </b> An object is an instance of a class that has a state and behavior. For example, a dog is an object whose status is: color, name, breed; Behaviors include: tail wagging and so on</li>
+            <li><b>Class: </b> A class is a template that describes the behavior and state of a class of objects.</li>
         </ul>
 
-        <span style='margin-left:30px'>You will see <i>Hello World</i> in the cmd</span><br/>
-
-        <div class='code-block'>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> javac</span> HelloWorld.java</span><br/>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> java</span> HelloWorld </span><br />
-            <span>Hello World</span>
-        </div>
+        <span style='margin-left:30px'>In the figure below, boy and girl are <b>class</b>, and each of them is the <b>object</b> of this class</span>
+        <div style="margin:10px 0 0 40px;"><img src='./object.png'/></div>
+       
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
+
+         <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title second-title'>
             Constructor
         </div>
+        
+        <span style='margin-left:30px'>each class has a constructor. If a constructor is not explicitly defined for the class, the Java compiler will provide a default constructor for the class. </span><br/>
+        <span style='margin-left:30px'>when creating an object, call at least one constructor. The constructor name must be the same as the class, and a class can have more than one constructor. </span><br/>
+        <span style='margin-left:30px'>here is an example of a constructor:</span><br/>
 
-        <span style='margin-left:30px'>A Java program can be thought of as a collection of objects that work together by calling each other's methods. </span><br/>
-        <span style='margin-left:30px'>Here are the basic concepts.</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>Object: </b> An object is an instance of a class that has state and behavior.</li>
-            <li><b>Class: </b> A class is a template that describes the behavior and state of a class of objects.</li>
-            <li><b>Methods: </b> A method is a behavior, and a class can have many methods. Logic operations, data modifications, and all actions are done in methods.</li>
-            <li><b>Instance: </b> Each object has unique instance variables, and the state of the object is determined by the values of those instance variables.</li>
-        </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>When writing Java programs, note the following:</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>Case sensitive: </b> Java is case-sensitive, which means that the identifier Hello is different from Hello.</li>
-            <li><b>Class name: </b> For all classes, the first letter of the class name should be capitalized. If the class name consists of several words, the first letter of each word should be capitalized.</li>
-            <li><b>Method name: </b> All method names should begin with a lowercase letter. If the method name contains several words, capitalize each word that follows.</li>
-            <li><b>Source file name: </b> The source file name must be the same as the class name. When saving files, you should use the class name as the file name (remember Java is case-sensitive).</li>
-            <li><b>Main method: </b> All Java program starts by <b>public static void main(String [ ]args) </b>method</li>
-        </ul>
+<div class = 'code-block'>
+            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>Puppy</span> {</span><br/>
+            <br />
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>&nbsp;</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Default Constructor</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>
+                <span style='color:#19F9D8'>String</span> name</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Constructor with a parameter</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <br/>
+            <span>}</span><br/>
+        </div>
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
@@ -76,34 +60,63 @@
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
 
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title third-title'>
-            Constructor
+            Create an Object
         </div>
 
-        <span style='margin-left:30px'>All the components of Java require names. Class names, variable names, and method names are called identifiers.</span><br/>
-        <span style='margin-left:30px'>There are a few things to note about Java identifiers:</span><br/>
+        <span style='margin-left:30px'>The object is created based on the class. In Java, the keyword new is used to create a new object. The following three steps are required to create the object:</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>All identifiers should begin with A letter (a-z or a-z), A dollar sign ($), or an underscore (_)</li>
-            <li>The first character can be followed by any combination of letters (a-z or a-z), dollar characters ($), underscores (_), or Numbers</li>
-            <li>Keywords cannot be used as identifiers</li>
-            <li>Identifiers are case sensitive</li>
-            <li>Examples of legal identifiers: age、$salary、_value、__1_value</li>
-            <li>Examples of illegal identifiers: 123abc、-salary</li>
+            <li><b>Declaration: </b>declaration of an object, including the object name and object type.</li>
+            <li><b>instantiation: </b>use the keyword new to create an object.</li>
+            <li><b>initialization: </b>when creates an object using new, the constructor is called to initialize the object</li>
         </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>Like other languages, Java can use modifiers to modify methods and properties in a class. There are two main types of modifiers:</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li>Access control modifier : <b>default, public , protected, private</b></li>
-            <li>Non-access control modifier : <b>final, abstract, static, synchronized</b></li>
-        </ul>
-        <span style='margin-left:30px'>We'll discuss Java modifiers in more detail in later sections.</span><br/>
-        <div class='mark-block'>
+        <span style='margin-left:30px'>here's an example of creating an object:</span><br/>
+        
+        <div class = 'code-block'>
+            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>Puppy</span> {</span><br/>
+            <br />
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>&nbsp;</span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Default Constructor</span>
+                <br/>
+            <span style='margin-left:20px'>}</span><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#FFB86C'>Puppy</span> ( <span style='color:#19F9D8'></span><span style='color:#B6B6B6'>
+                <span style='color:#19F9D8'>String</span> <span style="color:#FFF273">name</span></span> ) {</span><br/>        
+                <span style='margin-left:40px;color:#67AB7D'>// Constructor with a parameter</span><br />
+                <span style='margin-left:40px;color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Dog name is: </span>" + <span style="color:#FFF273">name</span> ) ; 
+                <br/>
+            <span style='margin-left:20px'>}</span><br/><br/>
+
+            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
+            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>[ ] 
+            <span style='color:#FFF273'>args</span> ) {</span><br/>
+            <span style='margin-left:40px;color:#67AB7D'>// Create a Puppy object</span><br />
+            <span style='margin-left:40px'>
+                <span style='color:#FFB86C'>Puppy </span>
+                <span style='color:#FFF273'>myPuppy</span> =
+                <span style='color:#19F9D8'>new</span> <span style='color:#FFB86C'>Puppy </span>("<span style='color:#B6B6B6'>Tom</span>") ; 
+                </span><br/>
+            <span style='margin-left:20px'>}</span><br/>
+            <br/>
+            <span>}</span><br/>
+        </div>
+        <span style='margin-left:30px'>Compile and run the above program, and the following results will be printed:</span><br/>
+        <div class='code-block'>
+            
+            <span>Dog name is: Tom</span>
+        </div>
+       <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
 
+        <el-divider></el-divider>
+       
 
         <!---------------------------------------------------------->
         <div class='sub-title forth-title'>
@@ -230,7 +243,7 @@ export default {
             switch(value){
                 case 1:$('.first-title').css('background-color','#67C23A');this.knowPush("Object and Class");break;
                 case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("Constructor");break;
-                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("Create an object");break;
+                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("Create an Object");break;
                 case 4:$('.forth-title').css('background-color','#67C23A');this.knowPush("Interfaces and Subclasses");break;
             }
 
@@ -248,7 +261,7 @@ export default {
             switch(value){
                 case 1:$('.first-title').css('background-color','#E6A23C');this.unknowPush("Object and Class");break;
                 case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("Constructor");break;
-                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("Create an object");break;
+                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("Create an Object");break;
                 case 4:$('.forth-title').css('background-color','#E6A23C');this.unknowPush("Interfaces and Subclasses");break;
             }
 
@@ -292,7 +305,7 @@ export default {
             switch(value){
                 case 1:this.$emit('note','Object and Class');break;
                 case 2:this.$emit('note','Constructor');break;
-                case 3:this.$emit('note','Create an object');break;
+                case 3:this.$emit('note','Create an Object');break;
                 case 4:this.$emit('note','Interfaces and Subclasses');break;
             }
         },

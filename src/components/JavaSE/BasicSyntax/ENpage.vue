@@ -14,8 +14,8 @@
             <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
             <br />
             <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
+            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>[ ]
+            <span style='color:#FFF273'>args</span> ) {</span><br/>
             <span style='margin-left:40px'>
                 <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
                 <span style='color:#67AB7D'>// print Hello World</span></span><br/>
@@ -122,8 +122,8 @@
             <span style='margin-left:24px'><span style="color:#67AB7D"> * /</span></span><br/>
             
             <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
+            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>[ ] 
+            <span style='color:#FFF273'>args</span> ) {</span><br/>
 
             <br />
             <span style='margin-left:40px'><span style="color:#67AB7D"> // This is an example of a single line comment</span></span><br/>

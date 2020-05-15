@@ -8,66 +8,88 @@
             数组
         </div>
 
-        <span style='margin-left:30px'>下面看一个简单的Java程序，它将打印字符串 <i>Hello World</i></span>
+        <span style='margin-left:30px'>数组对于每一门编程语言来说都是重要的数据结构之一，当然不同语言对数组的实现及处理也不尽相同。</span><br/>
+        <span style='margin-left:30px'>Java 语言中提供的数组是用来存储固定大小的同类型元素。</span><br/>
+        <span style='margin-left:30px'>你可以声明一个数组变量，如 numbers[100] 来代替直接声明 100 个独立变量 number0，number1，....，number99。</span><br/>
+        <el-divider></el-divider>
+        <span style='margin-left:30px;font-size:18px;font-weight:bold'>声明数组变量</span><br/><br/>
 
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// 打印 Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
-        </div>
+        <span style='margin-left:30px'>首先必须声明数组变量，才能在程序中使用数组。下面是声明数组变量的语法：</span><br/>
         
-        <span style='margin-left:30px'>下面我们将展示如何保存、编译以及运行这个程序：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">dataType</span>[ ] <span style="color:#FFF273"> arrayRefVar</span> ;
+            <span style='color:#67AB7D'>// The better way!</span><br/>
+            <span style='color:#B6B6B6'>or</span><br />
+            <span style="color:#FFB86C">dataType</span> <span style="color:#FFF273"> arrayRefVar</span> [ ] ;
+            <span style='color:#67AB7D'>// Not so good!</span><br/>
+        </div><br />
 
+        <el-divider></el-divider>
+        <span style='margin-left:30px;font-size:18px;font-weight:bold'>创建数组</span><br/><br/>
+
+        <span style='margin-left:30px'>Java语言使用new操作符来创建数组，语法如下：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFF273"> arrayRefVar</span> = <span style='color:#19F9D8'>new</span> <span style="color:#FFB86C">dataType</span>
+            [ <span style='color:#B6B6B6'>arraySize</span> ] ;
+        </div><br />
+        
+
+        <span style='margin-left:30px'>上面的语法语句做了两件事：</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>打开代码编辑器，把上面的代码添加进去</li>
-            <li>把文件名保存为：HelloWorld.java</li>
-            <li>打开 cmd 命令窗口，进入目标文件所在的位置，假设是 C:\</li>
-            <li>在命令行窗口输入 javac HelloWorld.java 按下回车键编译代码</li>
-            <li>再键输入 java HelloWorld 按下回车键就可以运行程序了。</li>
+            <li>使用 dataType[arraySize] 创建了一个数组。</li>
+            <li>把新创建的数组的引用赋值给变量 arrayRefVar。</li>
         </ul>
 
-        <span style='margin-left:30px'>你将会在窗口看到 Hello World</span><br/>
-
+        <span style='margin-left:30px'>数组变量的声明，和创建数组可以用一条语句完成，如下所示：</span><br/>
         <div class='code-block'>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> javac</span> HelloWorld.java</span><br/>
-            <span><span style='color:#FF75B5'>C : > </span> <span style='color:#19F9D8'> java</span> HelloWorld </span><br />
-            <span>Hello World</span>
-        </div>
+            <span style="color:#FFB86C">dataType</span> [ ] <span style="color:#FFF273"> arrayRefVar</span> = <span style='color:#19F9D8'>new</span> <span style="color:#FFB86C">dataType</span>
+            [ <span style='color:#B6B6B6'>arraySize</span> ] ;<br />
+            <span style='color:#B6B6B6'>or</span><br/>
+            <span style="color:#FFB86C">dataType</span> [ ] <span style="color:#FFF273"> arrayRefVar</span> = { <span style='color:#B6B6B6'>value0,value1 ... valuek</span> }
+        </div><br />
+        
+        <span style='margin-left:30px'>数组的元素是通过索引访问的。数组索引从 0 开始，所以索引值从 0 到 arrayRefVar.length-1。</span><br/>
+        <img style="margin-top:30px;margin-left:40px;" src='./array.png'/>
+    
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(1)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(1)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(1)'></el-button>
         </div>
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title second-title'>
-            链表
+            哈希表
         </div>
 
-        <span style='margin-left:30px'>一个 Java 程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。以下是基本概念。</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>对象：</b> 对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴等。</li>
-            <li><b>类：</b> 类是一个模板，它描述一类对象的行为和状态。</li>
-            <li><b>方法：</b> 方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</li>
-            <li><b>实例变量：</b> 每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
-        </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>编写 Java 程序时，应注意以下几点：</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li><b>大小写敏感：</b> Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。</li>
-            <li><b>类名：</b> 对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写。</li>
-            <li><b>方法名：</b> 所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</li>
-            <li><b>源文件名：</b> 源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Java 是大小写敏感的）。</li>
-            <li><b>主方法入口：</b> 所有的 Java 程序由 <b>public static void main(String []args) </b>方法开始执行。</li>
-        </ul>
+        <span style='margin-left:30px'>Hashtable是原始的java.util的一部分， 是一个Dictionary具体的实现 。</span><br/>
+        <span style='margin-left:30px'>像HashMap一样，Hashtable在哈希表中存储键/值对。当使用一个哈希表，要指定用作键的对象，以及要链接到该键的值。</span><br/>
+        <span style='margin-left:30px'>然后，该键经过哈希处理，所得到的散列码被用作存储在该表中值的索引。</span><br/><br />
+        <span style='margin-left:30px'>Hashtable定义了四个构造方法。</span><br/><br/>
+        <span style='margin-left:30px'>第一个是默认构造方法：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> ( )
+        </div><br />
+
+        <span style='margin-left:30px'>第二个构造函数创建指定大小的哈希表：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size </span>)
+        </div><br />
+
+        <span style='margin-left:30px'> 第三个构造方法创建了一个指定大小的哈希表，并且通过fillRatio指定填充比例。</span><br/>
+        <span style='margin-left:30px'> 填充比例必须介于0.0和1.0之间，它决定了哈希表在重新调整大小之前的充满程度：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size</span>,
+            <span style="color:#19F9D8">float</span> <span style='color:#B6B6B6'>fillRatio </span>)
+        </div><br />
+
+        <span style='margin-left:30px'>第四个构造方法创建了一个以M中元素为初始化元素的哈希表。</span><br/>
+        <span style='margin-left:30px'>哈希表的容量被设置为M的两倍:</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Hashtable</span> ( <span style="color:#19F9D8">Map</span> <span style='color:#B6B6B6'>m </span>)
+        </div><br />
+
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(2)'></el-button>
@@ -75,67 +97,66 @@
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(2)'></el-button>
         </div>
 
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title third-title'>
-            队列
+            向量
         </div>
 
-        <span style='margin-left:30px'>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</span><br/>
-        <span style='margin-left:30px'>关于 Java 标识符，有以下几点需要注意：</span><br/>
+        <span style='margin-left:30px'>Vector 类实现了一个动态数组。和 ArrayList 很相似，但是两者是不同的：</span><br/>
         <ul style='margin-left:30px;line-height:35px'>
-            <li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
-            <li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
-            <li>关键字不能用作标识符</li>
-            <li>标识符是大小写敏感的</li>
-            <li>合法标识符举例：age、$salary、_value、__1_value</li>
-            <li>非法标识符举例：123abc、-salary</li>
+            <li>Vector 是同步访问的。</li>
+            <li>Vector 包含了许多传统的方法，这些方法不属于集合框架。</li>
         </ul>
-        <el-divider></el-divider>
-        <span style='margin-left:30px'>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</span><br/>
-        <ul style='margin-left:30px;line-height:35px'>
-            <li>访问控制修饰符 : <b>default, public , protected, private</b></li>
-            <li>非访问控制修饰符 : <b>final, abstract, static, synchronized</b></li>
-        </ul>
-        <span style='margin-left:30px'>在后面的章节中我们会深入讨论 Java 修饰符。</span><br/>
+
+        <span style='margin-left:30px'>Vector 主要用在事先不知道数组的大小，或者只是需要一个可以改变大小的数组的情况。</span><br/>
+        <span style='margin-left:30px'>Vector 类支持 4 种构造方法。</span><br/><br/>
+
+        <span style='margin-left:30px'>第一种构造方法创建一个默认的向量，默认大小为 10：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Vector</span> ( )
+        </div><br />
+
+        <span style='margin-left:30px'>第二种构造方法创建指定大小的向量：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Vector</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size </span>)
+        </div><br />
+
+        <span style='margin-left:30px'> 第三种构造方法创建指定大小的向量，并且增量用 incr 指定。增量表示向量每次增加的元素数目：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Vector</span> (<span style="color:#19F9D8"> int</span> <span style='color:#B6B6B6'>size</span>,
+            <span style="color:#19F9D8">int</span> <span style='color:#B6B6B6'>incr </span>)
+        </div><br />
+
+        <span style='margin-left:30px'>第四种构造方法创建一个包含集合 c 元素的向量：</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Vector</span> ( <span style="color:#19F9D8">Collection</span> <span style='color:#B6B6B6'>c </span>)
+        </div><br />
+
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(3)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(3)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(3)'></el-button>
         </div>
-
-
+        
+        <el-divider></el-divider>
         <!---------------------------------------------------------->
         <div class='sub-title forth-title'>
             栈
         </div>
 
-        <span style='margin-left:30px'>类似于 C/C++、Java 也支持单行以及多行注释。注释中的字符将被 Java 编译器忽略。</span><br/>
+        <span style='margin-left:30px'>栈是Vector的一个子类，它实现了一个标准的<b>后进先出</b>的栈。</span><br/>
+        <span style='margin-left:30px'>你可以把栈理解为对象的垂直分布的栈，当你添加一个新元素时，就将新元素放在其他元素的顶部。</span><br/>
+        <span style='margin-left:30px'>当你从栈中取元素的时候，就从栈顶取一个元素。换句话说，最后进栈的元素最先被取出。</span><br/><br/>
 
-        <div class = 'code-block'>
-            <span> <span style="color:#FF75B5">public class </span> <span style='color:#FFB86C'>HelloWorld</span> {</span><br/>
-            <br />
-            
-            <span style='margin-left:20px'><span style="color:#67AB7D">/* 这是第一个Java程序</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * 它将打印Hello World</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * 这是一个多行注释的示例</span></span><br/>
-            <span style='margin-left:24px'><span style="color:#67AB7D"> * /</span></span><br/>
-            
-            <span style='margin-left:20px'><span style="color:#FF75B5">public</span>
-            <span style='color:#19F9D8'> static void</span> <span style='color:#FFB86C'>main</span> ( <span style='color:#19F9D8'>String</span>
-             [ ]<span style='color:#B6B6B6'>args</span> ) {</span><br/>
 
-            <br />
-            <span style='margin-left:40px'><span style="color:#67AB7D"> // 这是单行注释的事例</span></span><br/>
-            <span style='margin-left:40px'><span style="color:#67AB7D"> /* 这个也是单行注释的事例 */</span></span><br/>
-            <br />
+        
+        <span style='margin-left:30px'>堆栈只定义了默认构造函数，用来创建一个空栈。 堆栈除了包括由Vector定义的所有方法，也定义了自己的一些方法。</span><br/>
 
-            <span style='margin-left:40px'>
-                <span style='color:#FFB86C'>System.out.println</span>( "<span style='color:#B6B6B6'>Hello World</span>" ) ; 
-                <span style='color:#67AB7D'>// 打印 Hello World</span></span><br/>
-            <span style='margin-left:20px'>}</span><br/>
-            <br/>
-            <span>}</span><br/>
+        <div class='code-block'>
+            <span style="color:#FFB86C">Stack</span> ( )
         </div>
+
 
         <div class='mark-block'>
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(4)'></el-button>
@@ -229,8 +250,8 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#67C23A');this.knowPush("数组");break;
-                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("链表");break;
-                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("队列");break;
+                case 2:$('.second-title').css('background-color','#67C23A');this.knowPush("哈希表");break;
+                case 3:$('.third-title').css('background-color','#67C23A');this.knowPush("向量");break;
                 case 4:$('.forth-title').css('background-color','#67C23A');this.knowPush("栈");break;
             }
 
@@ -247,8 +268,8 @@ export default {
 
             switch(value){
                 case 1:$('.first-title').css('background-color','#E6A23C');this.unknowPush("数组");break;
-                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("链表");break;
-                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("队列");break;
+                case 2:$('.second-title').css('background-color','#E6A23C');this.unknowPush("哈希表");break;
+                case 3:$('.third-title').css('background-color','#E6A23C');this.unknowPush("向量");break;
                 case 4:$('.forth-title').css('background-color','#E6A23C');this.unknowPush("栈");break;
             }
 
@@ -290,8 +311,8 @@ export default {
         clickNote(value){
             switch(value){
                 case 1:this.$emit('note','数组');break;
-                case 2:this.$emit('note','链表');break;
-                case 3:this.$emit('note','队列');break;
+                case 2:this.$emit('note','哈希表');break;
+                case 3:this.$emit('note','向量');break;
                 case 4:this.$emit('note','栈');break;
             }
         },
@@ -335,7 +356,7 @@ export default {
         margin-top:20px;
         margin-left:20px;
         margin-bottom: 20px;
-        min-height:100px;
+        min-height:50px;
         width:80%;
         background-color: #292A2B;
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
