@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Homepage from '@/components/homepage/index.vue'
 import PreTest from '@/components/PreTest/index.vue'
+import AfterTest from '@/components/AfterTest/index.vue'
 import Experience from '@/components/experience/index.vue'
 import Others from '@/components/others/index.vue'
 import Projects from '@/components/projects/index.vue'
@@ -27,6 +28,11 @@ export default new Router({
       path:'/pre-test',
       name:'PreTest',
       component:PreTest
+    },
+    {
+      path:'/after-test',
+      name:'AfterTest',
+      component:AfterTest
     },
     {
       path:'/experience',

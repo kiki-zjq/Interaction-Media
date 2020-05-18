@@ -45,7 +45,7 @@
         <template slot='title'>
           <i class="el-icon-menu"></i>
             <span slot="title">{{language=='Chinese'?'首页':'HOMEPAGE'}}
-            <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i>
+            <!-- <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i> -->
           </span>
         </template>
         <el-menu-item-group>
@@ -68,7 +68,7 @@
         <template slot='title'>
           <i class="el-icon-edit"></i>
           <span slot="title">{{language=='Chinese'?'课前测试':'Pre-Course Test'}}</span>
-          <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i>
+          <!-- <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i> -->
         </template>
       </el-menu-item>
 
@@ -134,7 +134,7 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item index="6" @click='handleClick(7)'>
+      <el-menu-item index="7" @click='handleClick(7)'>
         <template slot='title'>
           <i class="el-icon-reading"></i>
           <span slot="title">{{language=='Chinese'?'课后测试':'Final Test'}}</span>
@@ -192,6 +192,8 @@ export default {
         this.active='3-4';break;
       case '/JavaSE/MultiProcess':
         this.active='3-5';break;
+      case '/after-test':
+        this.active='7';break;
       default:
         this.active='1';
     }
@@ -219,6 +221,8 @@ export default {
         this.active='3-4';break;
       case '/JavaSE/MultiProcess':
         this.active='3-5';break;
+      case '/after-test':
+        this.active='7';break;
       }
       if(to.path=='/'){
         switch(to.hash){
@@ -245,7 +249,7 @@ export default {
             case 3:this.$router.push('/experience#anchor');break;
             case 4:this.$router.push('/');break;
             case 5:this.$router.push('/');break;
-            case 6:this.$router.push('/');break;
+            case 7:this.$router.push('/after-test#anchor');break;
             case 1.1:this.$router.push('/#anchor');break;
             case 1.2:this.$router.push('/#skill');break;
             case 1.3:this.$router.push('/#contact');break;

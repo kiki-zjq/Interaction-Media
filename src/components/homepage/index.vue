@@ -4,16 +4,10 @@
         <!-- <div class="divider"></div> -->
         
         <div class="sub-title">
-            {{language=='Chinese'?'关于作者':'About'}}
+            {{language=='Chinese'?'介绍':'Introduction'}}
         </div>
             <div class="homepage-content" v-if='language=="Chinese"'>
-                <!-- <p>作者朱江奇，北京邮电大学2017级在读，电信工程及管理专业。目前专业排名第一 （1/326）</p><br/>
-                <p>对计算机科学以及软件工程方向有着浓厚的兴趣，通过自学了解并掌握了部分编程语言。</p><br/>
-                <p>日常喜欢应用新学到的知识做一些小的项目的编写，希望能籍由此巩固知识并提升自己的代码能力。</p><br />
-                <p>最后，本项目是一个从零开始搭建的个人主页，页面布局仿照了react-spring官网（<a href='https://www.react-spring.io/'>https://www.react-spring.io/</a>）.</p><br />
-                <p>项目搭建在github page上，其中使用到了诸如vue,vue-router,element-ui,e-charts等技术。同时为了解析json文件也进行了axios封装。<b>（由于github-page网站自身的原因，加载图片的时候可能速度较慢）</b></p><br />
-                <p>本网站可能还有诸多不足，但希望伴随着自己的技能成长可以进一步的完善填充它。</p><br />
-                <p>最后！24小时在线求职求实验室求求了QnQ（<a style='color:black;font-weight:bold' href='#/#contact'>联系方式</a>）</p> -->
+                
             </div>
         
             <div class="homepage-content" v-if='language=="English"'>
@@ -34,9 +28,9 @@
             </div>
         
         <!--------------------------------------------------------------------------------------------------------------->
-        <div class="sub-title" id='contact'>{{language=='Chinese'?'联系方式':'Contact'}}</div>
+        <div class="sub-title" id='contact'>{{language=='Chinese'?'使用说明':'Guide'}}</div>
             
-            <div class="homepage-content" v-if='language=="Chinese"'>
+            <!-- <div class="homepage-content" v-if='language=="Chinese"'>
                 <b>邮箱: </b><span style='margin-left:26px'>zhujiangqi@bupt.edu.cn</span><br />
                 <span style="margin-left:64px;">zhujiangqi@outlook.com</span><br/><br/>
                 <b>Github: </b>
@@ -50,7 +44,7 @@
                 <b>Github: </b>
                 <a style="color:black;" href="https://github.com/kiki-zjq" target="_blank">https://github.com/kiki-zjq</a><br/><br/>
                 <b>Tel:</b><span style='margin-left:30px'>18810701233</span><br/><br/>
-            </div>
+            </div> -->
         
         <!--------------------------------------------------------------------------------------------------------------->
     </div>
