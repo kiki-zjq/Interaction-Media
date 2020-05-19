@@ -7,7 +7,7 @@
             </div>
                 <div class="contact-links">
                     <a
-                    href="https://facebook.com/freecodecamp"
+                    href="#"
                     target="_blank"
                     class="btn contact-details"
                     ><i class="fa fa-facebook-square fa-2x"></i> <span class='contact-way'>Facebook</span></a>
@@ -15,31 +15,31 @@
 
                     <a
                     id="profile-link"
-                    href="https://github.com/freecodecamp"
+                    href="https://github.com/kiki-zjq"
                     target="_blank"
                     class="btn contact-details"
                     ><i class="fa fa-github fa-2x"></i> <span class='contact-way'>GitHub</span></a>
 
                     <a
-                        href="https://twitter.com/freecodecamp"
+                        href="#"
                         target="_blank"
                         class="btn contact-details"
                     ><i class="fa fa-twitter fa-2x"></i> <span class='contact-way'>Twitter</span></a>
 
                     <a 
-                        href="mailto:example@example.com" 
+                        href="#" 
                         class="btn contact-details"
                     ><i class="fa fa-at fa-2x"></i> <span class='contact-way'>Send a mail</span></a>
 
                     <a 
-                        href="tel:555-555-5555" 
+                        href="#" 
                         class="btn contact-details"
                     ><i class="fa fa-phone-square fa-2x"></i> <span class='contact-way'>Call me</span></a>
 
                 </div>
             <el-divider></el-divider>
             <div class="copyright">
-                <i class="fa fa-copyright fa-1x" aria-hidden="true"></i><span class='team-name'>Interactive-Media Group35</span>
+                <i class="fa fa-copyright fa-1x" aria-hidden="true"></i><span class='team-name'>Interactive Media Design and Production -- Group35</span>
             </div>
     </div>
 </template>

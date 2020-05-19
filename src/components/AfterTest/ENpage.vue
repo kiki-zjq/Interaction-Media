@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import Card from './components/Card';
+import Card from './components/CardEN';
 import resultCard from './components/resultCard';
 import checkCard from './components/checkCard';
 

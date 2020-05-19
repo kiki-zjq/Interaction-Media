@@ -43,7 +43,7 @@
 
       <el-submenu index='1'>
         <template slot='title'>
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-s-grid"></i>
             <span slot="title">{{language=='Chinese'?'首页':'HOMEPAGE'}}
             <!-- <i style='margin-left:20px' v-if="language=='Chinese'" class="el-icon-success"></i> -->
           </span>
@@ -51,15 +51,15 @@
         <el-menu-item-group>
 
           <el-menu-item index="1-1" @click='handleClick(1.1)'>
-            {{language=='Chinese'?'关于作者':'About'}}
+            {{language=='Chinese'?'介绍':'Introduction'}}
           </el-menu-item>
 
           <el-menu-item index="1-2" @click='handleClick(1.2)'>
-            {{language=='Chinese'?'你将学会':'You will learn'}}
+            {{language=='Chinese'?'你将学会':'What will you learn'}}
           </el-menu-item>
 
           <el-menu-item index="1-3" @click='handleClick(1.3)'>
-            {{language=='Chinese'?'联系方式':'Contact'}}
+            {{language=='Chinese'?'使用说明':'Guide'}}
           </el-menu-item>
         </el-menu-item-group>
       </el-submenu>
@@ -111,7 +111,7 @@
 
       <el-menu-item index="5" @click='handleClick(4)'>
         <template slot='title'>
-          <i class="el-icon-suitcase"></i>
+          <i class="el-icon-document"></i>
           <span slot="title">{{language=='Chinese'?'JavaWeb':'JavaWeb'}}</span>
           <i style='margin-left:20px' v-if="know[1]" class="el-icon-success"></i>
         </template>
@@ -119,16 +119,16 @@
 
       <el-menu-item index="6" @click='handleClick(5)'>
         <template slot='title'>
-          <i class="el-icon-reading"></i>
+          <i class="el-icon-copy-document"></i>
           <span slot="title">{{language=='Chinese'?'Java 常用框架':'Java Frame'}}</span>
           <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
         </template>
       </el-menu-item>
 
 
-      <el-menu-item index="6" @click='handleClick(6)'>
+      <el-menu-item index="8" @click='handleClick(6)'>
         <template slot='title'>
-          <i class="el-icon-reading"></i>
+          <i class="el-icon-s-order"></i>
           <span slot="title">{{language=='Chinese'?'数据库':'Database'}}</span>
           <i style='margin-left:20px' v-if="know[3]" class="el-icon-success"></i>
         </template>
@@ -247,8 +247,9 @@ export default {
           switch(index){
             case 2:this.$router.push('/pre-test#anchor');break;
             case 3:this.$router.push('/experience#anchor');break;
-            case 4:this.$router.push('/');break;
-            case 5:this.$router.push('/');break;
+            case 4:this.$router.push('/JavaWeb');break;
+            case 5:this.$router.push('/JavaFrame');break;
+            case 6:this.$router.push('/Database');break;
             case 7:this.$router.push('/after-test#anchor');break;
             case 1.1:this.$router.push('/#anchor');break;
             case 1.2:this.$router.push('/#skill');break;
