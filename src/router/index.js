@@ -13,6 +13,8 @@ import DataStructure from '@/components/JavaSE/DataStructure/index.vue'
 import JVM from '@/components/JavaSE/JVM/index.vue'
 import MultiProcess from '@/components/JavaSE/MultiProcess/index.vue'
 
+import MySQL from '@/components/Database/MySQL/index.vue'
+import MongoDB from '@/components/Database/Mongo/index.vue'
 
 
 Vue.use(Router)
@@ -78,6 +80,16 @@ export default new Router({
       path:'/JavaSE/MultiProcess',
       name:'MultiProcess',
       component:MultiProcess
+    },
+    {
+      path:'/Database/MySQL',
+      name:'MySQL',
+      component:MySQL
+    },
+    {
+      path:'/Database/MongoDB',
+      name:'MongoDB',
+      component:MongoDB
     },
   ],
   scrollBehavior (to, from, savedPosition) {

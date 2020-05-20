@@ -39,7 +39,7 @@
                 </div>
             <el-divider></el-divider>
             <div class="copyright">
-                <i class="fa fa-copyright fa-1x" aria-hidden="true"></i><span class='team-name'>Interactive Media Design and Production -- Group35</span>
+                <i class="fa fa-copyright fa-1x" aria-hidden="true"></i><span class='team-name'>Interactive Media Design and Production -- Group36</span>
             </div>
     </div>
 </template>

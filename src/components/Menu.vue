@@ -126,13 +126,35 @@
       </el-menu-item>
 
 
-      <el-menu-item index="8" @click='handleClick(6)'>
+      <!-- <el-menu-item index="8" @click='handleClick(6)'>
         <template slot='title'>
           <i class="el-icon-s-order"></i>
           <span slot="title">{{language=='Chinese'?'数据库':'Database'}}</span>
           <i style='margin-left:20px' v-if="know[3]" class="el-icon-success"></i>
         </template>
-      </el-menu-item>
+      </el-menu-item> -->
+      <!------------------------------------------------->
+      <el-submenu index='8'>
+        <template slot='title'>
+          <i class="el-icon-s-order"></i>
+          <span slot="title">{{language=='Chinese'?'数据库':'Database'}}</span>
+          <i style='margin-left:20px' v-if="know[3]" class="el-icon-success"></i>
+        </template>
+        <el-menu-item-group style='padding-left:20px'>
+
+          <el-menu-item index="8-1" @click='handleClick(8.1)'>
+            {{language=='Chinese'?'MySQL':'MySQL'}}
+          </el-menu-item>
+
+          <el-menu-item index="8-2" @click='handleClick(8.2)'>
+            {{language=='Chinese'?'MongoDB':'MongoDB'}}
+          </el-menu-item>
+
+
+        </el-menu-item-group>
+
+      </el-submenu>
+      <!------------------------------------------------->
 
       <el-menu-item index="7" @click='handleClick(7)'>
         <template slot='title'>
@@ -194,6 +216,10 @@ export default {
         this.active='3-5';break;
       case '/after-test':
         this.active='7';break;
+       case '/Database/MySQL':
+        this.active='8-1';break;
+      case '/Database/MongoDB':
+        this.active='8-2';break;
       default:
         this.active='1';
     }
@@ -223,6 +249,10 @@ export default {
         this.active='3-5';break;
       case '/after-test':
         this.active='7';break;
+      case '/Database/MySQL':
+        this.active='8-1';break;
+      case '/Database/MongoDB':
+        this.active='8-2';break;
       }
       if(to.path=='/'){
         switch(to.hash){
@@ -259,6 +289,9 @@ export default {
             case 3.3:this.$router.push('/JavaSE/DataStructure#header');break;
             case 3.4:this.$router.push('/JavaSE/JVM#header');break;
             case 3.5:this.$router.push('/JavaSE/MultiProcess#header');break;
+            case 8.1:this.$router.push('/Database/MySQL#header');break;
+            case 8.2:this.$router.push('/Database/MongoDB#header');break;
+            
           }
       },
     },
