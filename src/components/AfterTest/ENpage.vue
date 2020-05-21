@@ -196,11 +196,7 @@ export default {
               For construction injection, Spring needs to instantiate all 
               instances of its dependencies at the same time as it creates 
               the Bean instance.For complex dependencies, the use of construct 
-              injection can lead to overstaffing of the constructor.Constructor-arg 
-              elements are used in the bean element to set the constructor injection of 
-              the value attribute value, with the type attribute of the element specifying 
-              the parameter type, and the index attribute specifying the index position of 
-              the parameter in the constructor parameter list`
+              injection can lead to overstaffing of the constructor.`
             ],
             [
              'Analysis 5:',
@@ -208,10 +204,7 @@ export default {
              and with the DAO abstraction provided by the Spring framework, developers can 
              interact with data access technologies (such as JDBC, Hibernate, JDO, TopLink) in a unified way.
              JdbcTemplate is a utility template class provided by Spring for manipulating RDBMS with JDBC, 
-             simplifying JDBC operations.Spring provides DataAccessException, an exception class 
-             that encapsulates the exceptions of many existing database access technologies 
-             and provides us with an exception system that is independent of the underlying database, 
-             so we can easily handle various data access exceptions. The exception class is RuntimeException.`
+             simplifying JDBC operations.`
             ],
 
             [

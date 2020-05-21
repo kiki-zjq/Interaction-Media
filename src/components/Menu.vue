@@ -117,13 +117,28 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item index="6" @click='handleClick(5)'>
+      <!------------------------------------------------------------------------------------>
+
+      <el-submenu index='6'>
+      
         <template slot='title'>
           <i class="el-icon-copy-document"></i>
           <span slot="title">{{language=='Chinese'?'Java 常用框架':'Java Frame'}}</span>
           <i style='margin-left:20px' v-if="know[2]" class="el-icon-success"></i>
         </template>
-      </el-menu-item>
+
+        <el-menu-item-group style='padding-left:20px'>
+
+          <el-menu-item index="6-1" @click='handleClick(5.1)'>
+            {{language=='Chinese'?'Spring':'Spring'}}
+          </el-menu-item>
+
+          <el-menu-item index="6-2" @click='handleClick(5.2)'>
+            {{language=='Chinese'?'MyBatis':'MyBatis'}}
+          </el-menu-item>
+        </el-menu-item-group>
+
+      </el-submenu>
 
 
       <!-- <el-menu-item index="8" @click='handleClick(6)'>
@@ -220,6 +235,10 @@ export default {
         this.active='8-1';break;
       case '/Database/MongoDB':
         this.active='8-2';break;
+      case '/JavaFrame/MyBatis':
+        this.active='6-2';break;
+      case '/JavaFrame/Spring':
+        this.active='6-1';break;
       default:
         this.active='1';
     }
@@ -253,6 +272,10 @@ export default {
         this.active='8-1';break;
       case '/Database/MongoDB':
         this.active='8-2';break;
+      case '/JavaFrame/MyBatis':
+        this.active='6-2';break;
+      case '/JavaFrame/Spring':
+        this.active='6-1';break;
       }
       if(to.path=='/'){
         switch(to.hash){
@@ -291,6 +314,8 @@ export default {
             case 3.5:this.$router.push('/JavaSE/MultiProcess#header');break;
             case 8.1:this.$router.push('/Database/MySQL#header');break;
             case 8.2:this.$router.push('/Database/MongoDB#header');break;
+            case 5.2:this.$router.push('/JavaFrame/MyBatis#header');break;
+            case 5.1:this.$router.push('/JavaFrame/Spring#header');break;
             
           }
       },

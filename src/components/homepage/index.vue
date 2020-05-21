@@ -43,13 +43,7 @@
                 <p>4.Besides, they can be some people looking forward to finding a job about Java programming .</p><br/>
                 <p>5.They can be someone just want to learn Java to broaden their horizons.</p><br/>
         
-                <!-- <p>Jiangqi Zhu, a junior student from Beijing University of Posts and Telecommunications (BUPT).My college major is telecommunications engineering with Management with overall GPA 91.9/100 , <b>ranking 1st among 328</b>. </p><br/>
-                <p> I am very interested in software engineering, data mining and database. At the same time, I like to use programming language to write some simple projects in my daily study. </p><br/>
-                <p> For details about information and projects please check my CV or my Github. </p><br />
-                <p> Finally, this project is a personal homepage built from scratch, with the page layout modeled on the react-spring website（<a href='https://www.react-spring.io/'>https://www.react-spring.io/</a>）.</p><br />
-                <p> This project, which has used vue, vuex, vue-router, axios and many front-end technologies, set up based on github-page.<b>(Some images may be slow to load due to github-page itself)</b></p><br />
-                <p> This website may have many shortcomings, but I hope that with the growth of my skills I can  further improve it by myself.</p><br />
-                <p> At last, asking for an opportunity about research in a lab or work as a internship！！QnQ（<a style='color:black;font-weight:bold' href='#/#contact'>Contact Me pls！！</a>）</p> -->
+                
             </div>
 
         <!--------------------------------------------------------------------------------------------------------------->
@@ -61,7 +55,10 @@
         
         <!--------------------------------------------------------------------------------------------------------------->
         <div class="sub-title" id='contact'>{{language=='Chinese'?'使用说明':'Guide'}}</div>
-            
+        <br /><br />
+            <video width='100%' controls>
+                <source src="../../../static/img/instruction.mp4" type="video/mp4">
+            </video>
             <!-- <div class="homepage-content" v-if='language=="Chinese"'>
                 <b>邮箱: </b><span style='margin-left:26px'>zhujiangqi@bupt.edu.cn</span><br />
                 <span style="margin-left:64px;">zhujiangqi@outlook.com</span><br/><br/>

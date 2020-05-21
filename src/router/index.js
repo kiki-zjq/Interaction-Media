@@ -16,6 +16,8 @@ import MultiProcess from '@/components/JavaSE/MultiProcess/index.vue'
 import MySQL from '@/components/Database/MySQL/index.vue'
 import MongoDB from '@/components/Database/Mongo/index.vue'
 
+import MyBatis from '@/components/JavaFrame/MyBatis/index.vue'
+import Spring from '@/components/JavaFrame/Spring/index.vue'
 
 Vue.use(Router)
 
@@ -90,6 +92,16 @@ export default new Router({
       path:'/Database/MongoDB',
       name:'MongoDB',
       component:MongoDB
+    },
+    {
+      path:'/JavaFrame/MyBatis',
+      name:'MyBatis',
+      component:MyBatis
+    },
+    {
+      path:'/JavaFrame/Spring',
+      name:'Spring',
+      component:Spring
     },
   ],
   scrollBehavior (to, from, savedPosition) {
