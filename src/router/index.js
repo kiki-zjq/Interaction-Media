@@ -19,6 +19,9 @@ import MongoDB from '@/components/Database/Mongo/index.vue'
 import MyBatis from '@/components/JavaFrame/MyBatis/index.vue'
 import Spring from '@/components/JavaFrame/Spring/index.vue'
 
+import JavaWebIntro from '@/components/JavaWeb/intro/index.vue'
+import JavaWebStruct from '@/components/JavaWeb/struct/index.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -102,6 +105,16 @@ export default new Router({
       path:'/JavaFrame/Spring',
       name:'Spring',
       component:Spring
+    },
+    {
+      path:'/JavaWeb/JSP-intro',
+      name:'JavaWebIntro',
+      component:JavaWebIntro
+    },
+    {
+      path:'/JavaWeb/JSP-structure',
+      name:'JavaWebStruct',
+      component:JavaWebStruct
     },
   ],
   scrollBehavior (to, from, savedPosition) {

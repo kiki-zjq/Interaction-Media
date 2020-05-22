@@ -119,7 +119,7 @@
        
 
         <!---------------------------------------------------------->
-        <div class='sub-title forth-title'>
+        <!-- <div class='sub-title forth-title'>
             Interfaces and Subclasses
         </div>
 
@@ -155,10 +155,10 @@
             <el-button type="primary" icon="el-icon-edit" circle @click='clickNote(4)'></el-button>
             <el-button type="success" icon="el-icon-check" circle @click='clickKnow(4)'></el-button>
             <el-button type="warning" icon="el-icon-star-off" circle @click='clickUnknow(4)'></el-button>
-        </div>
+        </div> -->
 
         <!---------------------------------------------------------->
-        <el-divider></el-divider>
+
         
         <div class='end-block'>
             

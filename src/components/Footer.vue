@@ -7,8 +7,8 @@
             </div>
                 <div class="contact-links">
                     <a
-                    href="#"
-                    target="_blank"
+                    href="javascript:void(0);"
+                     @click="open"
                     class="btn contact-details"
                     ><i class="fa fa-facebook-square fa-2x"></i> <span class='contact-way'>Facebook</span></a>
 
@@ -21,18 +21,20 @@
                     ><i class="fa fa-github fa-2x"></i> <span class='contact-way'>GitHub</span></a>
 
                     <a
-                        href="#"
-                        target="_blank"
+                        href="javascript:void(0);"
+                         @click="open"
                         class="btn contact-details"
                     ><i class="fa fa-twitter fa-2x"></i> <span class='contact-way'>Twitter</span></a>
 
                     <a 
-                        href="#" 
+                        href="javascript:void(0);" 
+                         @click="open"
                         class="btn contact-details"
                     ><i class="fa fa-at fa-2x"></i> <span class='contact-way'>Send a mail</span></a>
 
                     <a 
-                        href="#" 
+                        href="javascript:void(0);"
+                         @click="open" 
                         class="btn contact-details"
                     ><i class="fa fa-phone-square fa-2x"></i> <span class='contact-way'>Call me</span></a>
 
@@ -46,8 +48,16 @@
 <script>
 import "font-awesome/css/font-awesome.css"
 export default {
-    
-
+     methods: {
+      open() {
+        this.$alert(`<p>Sorry, we will not leave our contact information!</p><br/>
+                    <p>However, if you think our website is doing a good job, you can buy the producer a cup of coffee XD</p><br/>
+                    <img src='../../static/img/joke.jpg' width='80%' style='margin:0px 7%'/>`, 'Surprise!', {
+          dangerouslyUseHTMLString: true
+        });
+      }
+    }
+      
 }
 </script>
 <style scoped>

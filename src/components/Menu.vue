@@ -108,14 +108,26 @@
       <!------------------------------------------------------------------------------------>
 
 
-
-      <el-menu-item index="5" @click='handleClick(4)'>
+      <el-submenu index='5'>
         <template slot='title'>
           <i class="el-icon-document"></i>
           <span slot="title">{{language=='Chinese'?'JavaWeb':'JavaWeb'}}</span>
           <i style='margin-left:20px' v-if="know[1]" class="el-icon-success"></i>
         </template>
-      </el-menu-item>
+
+        <el-menu-item-group style='padding-left:20px'>
+
+          <el-menu-item index="5-1" @click='handleClick(4.1)'>
+            {{language=='Chinese'?'JSP 简介':'JSP Introduction'}}
+          </el-menu-item>
+
+          <el-menu-item index="5-2" @click='handleClick(4.2)'>
+            {{language=='Chinese'?'JSP 结构':'JSP Structure'}}
+          </el-menu-item>
+        </el-menu-item-group>
+
+
+      </el-submenu>
 
       <!------------------------------------------------------------------------------------>
 
@@ -239,6 +251,10 @@ export default {
         this.active='6-2';break;
       case '/JavaFrame/Spring':
         this.active='6-1';break;
+        case '/JavaWeb/JSP-intro':
+        this.active='5-1';break;
+      case '/JavaWeb/JSP-structure':
+        this.active='5-2';break;
       default:
         this.active='1';
     }
@@ -276,6 +292,12 @@ export default {
         this.active='6-2';break;
       case '/JavaFrame/Spring':
         this.active='6-1';break;
+      case '/JavaWeb/JSP-intro':
+        this.active='5-1';break;
+      case '/JavaWeb/JSP-structure':
+        this.active='5-2';break;
+
+        
       }
       if(to.path=='/'){
         switch(to.hash){
@@ -314,8 +336,11 @@ export default {
             case 3.5:this.$router.push('/JavaSE/MultiProcess#header');break;
             case 8.1:this.$router.push('/Database/MySQL#header');break;
             case 8.2:this.$router.push('/Database/MongoDB#header');break;
-            case 5.2:this.$router.push('/JavaFrame/MyBatis#header');break;
             case 5.1:this.$router.push('/JavaFrame/Spring#header');break;
+            case 5.2:this.$router.push('/JavaFrame/MyBatis#header');break;
+            case 4.1:this.$router.push('/JavaWeb/JSP-intro#header');break;
+            case 4.2:this.$router.push('/JavaWeb/JSP-structure#header');break;
+            
             
           }
       },
@@ -339,5 +364,9 @@ ul.el-menu-vertical-demo.main-menu.el-menu{
     text-align: left;
     background-color:"#fafafa";
 
+}
+.el-submenu__icon-arrow{
+  font-weight:bold;
+  color:black;
 }
 </style>

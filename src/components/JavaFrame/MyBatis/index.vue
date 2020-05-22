@@ -95,7 +95,7 @@ export default {
     methods:{
         handleNote(note){
             this.drawer = true
-            this.title = 'Database'
+            this.title = 'JavaFrame'
             this.nowTime = new Date().Format("yyyy-MM-dd HH:mm:ss")
             this.subTitle = note
         },
