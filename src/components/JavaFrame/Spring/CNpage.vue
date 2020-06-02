@@ -90,9 +90,9 @@
         
         <div class='end-block'>
             
-            <el-button type="danger" @click="dialogVisible = true" round>Chapter Reports</el-button>
-            <el-button type="warning" @click="testVisible = true" round>Chapter Test</el-button>
-            <el-button type="success" @click="nextPage()" round>Next Chapter</el-button>
+            <el-button type="danger" @click="dialogVisible = true" round>本章报告</el-button>
+            <el-button type="warning" @click="testVisible = true" round>章节检测</el-button>
+            <el-button type="success" @click="nextPage()" round>下一章</el-button>
         </div>
         <!---------------------------------------------------------->
 
@@ -130,14 +130,7 @@
             >
             <el-card class="box-card">
                 <div class="test-question">
-                    <b>Q: Which of the following is a valid identifier?</b>
-                </div>
-                
-                <div class="test-select" style='margin:20px 0'>
-                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>default</el-radio>
-                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>123abc</el-radio>
-                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>_$112as</el-radio>
-                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>-$kiki</el-radio>
+                    <b>本章节没有问题！赶快去学习下一章节吧~</b>
                 </div>
 
                 <div class="test-confirm" style='text-align:right'>

@@ -204,14 +204,13 @@
             >
             <el-card class="box-card">
                 <div class="test-question">
-                    <b>Q: 以下哪个是合法的标识符？</b>
+                    <b>Q: 对象和类之间有什么关系？</b>
                 </div>
                 
                 <div class="test-select" style='margin:20px 0'>
-                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>default</el-radio>
-                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>123abc</el-radio>
-                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>_$112as</el-radio>
-                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>-$kiki</el-radio>
+                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>对象就是类</el-radio>
+                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>二者并没有任何关联</el-radio>
+                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>类是一个模板，它描述一类对象的行为和状态。</el-radio>
                 </div>
 
                 <div class="test-confirm" style='text-align:right'>

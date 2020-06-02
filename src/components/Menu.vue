@@ -93,13 +93,13 @@
             {{language=='Chinese'?'数据结构':'Data Structure'}}
           </el-menu-item>
 
-          <el-menu-item index="3-4" @click='handleClick(3.4)'>
+          <!-- <el-menu-item index="3-4" @click='handleClick(3.4)'>
             {{language=='Chinese'?'JVM':'JVM'}}
           </el-menu-item>
 
           <el-menu-item index="3-5" @click='handleClick(3.5)'>
             {{language=='Chinese'?'多线程':'Multi-process'}}
-          </el-menu-item>
+          </el-menu-item> -->
 
 
         </el-menu-item-group>

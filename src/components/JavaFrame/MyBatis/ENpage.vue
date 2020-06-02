@@ -128,15 +128,15 @@
             :before-close="handleClose"
             >
             <el-card class="box-card">
-                <div class="test-question">
-                    <b>Q: Which of the following is a valid identifier?</b>
+                 <div class="test-question">
+                    <b>Q: Which of the following is not major member of MyBatis?</b>
                 </div>
                 
                 <div class="test-select" style='margin:20px 0'>
-                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>default</el-radio>
-                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>123abc</el-radio>
-                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>_$112as</el-radio>
-                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>-$kiki</el-radio>
+                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>Configuration</el-radio>
+                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>SqlSession</el-radio>
+                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>SqlHandler</el-radio>
+                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>TypeHandler</el-radio>
                 </div>
 
                 <div class="test-confirm" style='text-align:right'>
@@ -234,7 +234,7 @@ export default {
             }
         },
         nextPage(){
-            this.$router.push('/Database/MongoDB#header');
+            this.$router.push('/Database/MySQL#header');
         }
 
     },

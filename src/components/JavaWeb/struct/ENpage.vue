@@ -98,15 +98,10 @@
             >
             <el-card class="box-card">
                 <div class="test-question">
-                    <b>Q: Which of the following is a valid identifier?</b>
+                    <b>There is no question in this chapter! Just go ahead~</b>
                 </div>
                 
-                <div class="test-select" style='margin:20px 0'>
-                    <el-radio v-model="select" label="1" style='display:block;line-height:36px;'>default</el-radio>
-                    <el-radio v-model="select" label="2" style='display:block;line-height:36px;'>123abc</el-radio>
-                    <el-radio v-model="select" label="3" style='display:block;line-height:36px;'>_$112as</el-radio>
-                    <el-radio v-model="select" label="4" style='display:block;line-height:36px;'>-$kiki</el-radio>
-                </div>
+
 
                 <div class="test-confirm" style='text-align:right'>
                     <el-button type="primary" @click="testAnswer" >Confirm</el-button>
@@ -206,7 +201,7 @@ export default {
             }
         },
         nextPage(){
-            this.$router.push('/JavaFrame/MyBatis#header');
+            this.$router.push('/JavaFrame/Spring#header');
         }
 
     },

@@ -49,8 +49,8 @@
         <!--------------------------------------------------------------------------------------------------------------->
         <div class="sub-title" id='skill'>{{language=='Chinese'?'你将学会':'What will you learn'}}</div>
             <div class="homepage-content">
-                <RectTreeChart class='rect-tree-chart'/>
-            
+                <RectTreeChart v-if='language=="Chinese"' class='rect-tree-chart'/>
+                <EnglishTree v-if='language=="English"' class='english-tree-chart'/>
             </div>
         
         <!--------------------------------------------------------------------------------------------------------------->
@@ -82,11 +82,13 @@
 <script src="https://kit.fontawesome.com/20e781ec47.js" crossorigin="anonymous"></script>
 <script>
 import RectTreeChart from './components/RectTreeChart';
+import EnglishTree from './components/EnglishTree'
 
 
 export default {
   components:{
       RectTreeChart,
+      EnglishTree,
   },
   data(){
       return{
